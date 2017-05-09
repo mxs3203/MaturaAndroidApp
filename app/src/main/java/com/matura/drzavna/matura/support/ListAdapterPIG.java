@@ -94,7 +94,7 @@ public class ListAdapterPIG extends ArrayAdapter<Pig_Pitanja> implements View.On
                                 for (String s : parts) {
                                     String sss = s.trim();
                                     if (sss.equalsIgnoreCase(mojOdg.getText().toString().trim())) {
-                                        mojOdg.setBackgroundColor(Color.parseColor("#4d91e3"));
+                                        mojOdg.setBackgroundColor(Color.parseColor("#141F4B"));
                                     } else {
                                         Toast.makeText(getContext(), "Točan odgovor je: " + p.getTocno(), Toast.LENGTH_LONG).show();
                                         mojOdg.setBackgroundColor(Color.parseColor("#AAAAAA"));
@@ -103,7 +103,7 @@ public class ListAdapterPIG extends ArrayAdapter<Pig_Pitanja> implements View.On
                             } else {
 
                                 if (mojOdg.getText().toString().equalsIgnoreCase(p.getTocno())) {
-                                    mojOdg.setBackgroundColor(Color.parseColor("#4d91e3"));
+                                    mojOdg.setBackgroundColor(Color.parseColor("#141F4B"));
                                 } else {
                                     Toast.makeText(getContext(), "Točan odgovor je: " + p.getTocno(), Toast.LENGTH_LONG).show();
                                     mojOdg.setBackgroundColor(Color.parseColor("#AAAAAA"));
@@ -136,6 +136,7 @@ public class ListAdapterPIG extends ArrayAdapter<Pig_Pitanja> implements View.On
                     in.putExtra("godina", godina);
                     in.putExtra("start", start);
                     in.putExtra("end", end);
+                    in.putExtra("rok", p.getRok());
                     in.putExtra("razina", p.getRazina());
                     a.finish();
                     getContext().startActivity(in);
@@ -180,7 +181,7 @@ public class ListAdapterPIG extends ArrayAdapter<Pig_Pitanja> implements View.On
                         if(p.isTocno_netocno().equalsIgnoreCase("1"))
                         {
                             ikonica.setChecked(true);
-                            tocno.setBackgroundColor(Color.parseColor("#4d91e3"));
+                            tocno.setBackgroundColor(Color.parseColor("#141F4B"));
                             netocno.setBackgroundColor(Color.parseColor("#AAAAAA"));
                             realm.executeTransaction(new Realm.Transaction() {
                                 public void execute(Realm realm) {
@@ -200,7 +201,7 @@ public class ListAdapterPIG extends ArrayAdapter<Pig_Pitanja> implements View.On
                                 }
                             });
                             tocno.setBackgroundColor(Color.parseColor("#AAAAAA"));
-                            netocno.setBackgroundColor(Color.parseColor("#4d91e3"));
+                            netocno.setBackgroundColor(Color.parseColor("#141F4B"));
                         }
                     }
                 });
@@ -218,7 +219,7 @@ public class ListAdapterPIG extends ArrayAdapter<Pig_Pitanja> implements View.On
                                 }
                             });
                             ikonica.setChecked(true);
-                            netocno.setBackgroundColor(Color.parseColor("#4d91e3"));
+                            netocno.setBackgroundColor(Color.parseColor("#141F4B"));
                             tocno.setBackgroundColor(Color.parseColor("#AAAAAA"));
                         }
                         else
@@ -231,7 +232,7 @@ public class ListAdapterPIG extends ArrayAdapter<Pig_Pitanja> implements View.On
                                 }
                             });
                             netocno.setBackgroundColor(Color.parseColor("#AAAAAA"));
-                            tocno.setBackgroundColor(Color.parseColor("#4d91e3"));
+                            tocno.setBackgroundColor(Color.parseColor("#141F4B"));
                         }
                     }
                 });
@@ -339,7 +340,7 @@ public class ListAdapterPIG extends ArrayAdapter<Pig_Pitanja> implements View.On
         for(TextView v : odgovori)
         {
             if(v.getText().toString().equalsIgnoreCase(tocan))
-                v.setBackgroundColor(Color.parseColor("#4d91e3"));
+                v.setBackgroundColor(Color.parseColor("#141F4B"));
             else
                 v.setBackgroundColor(Color.parseColor("#AAAAAA"));
         }

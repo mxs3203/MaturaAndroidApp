@@ -141,6 +141,7 @@ public class ListAdapterFizika extends ArrayAdapter<FizikaPitanje> implements Vi
                     Intent in = new Intent(getContext(), IspitActivity.class);
                     in.putExtra("table_name", table_name);
                     in.putExtra("godina", godina);
+                    in.putExtra("rok", p.getRok());
                     in.putExtra("start", start);
                     in.putExtra("end", end);
                     in.putExtra("razina", p.getRazina());

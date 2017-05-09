@@ -57,9 +57,9 @@ public class RjesavanjeIspitaRok extends Activity {
         final String godina = i.getStringExtra("godina");
         setupTitleBar(DatabaseHelper.mapTableNameToPresentationValue(table_name));
 
-        final ArrayList<String> godine = getAllRokovi(table_name);
+        final ArrayList<String> rokovi = getAllRokovi(table_name);
 
-        ArrayAdapter<Ispit> adapter = new ArrayAdapter(this, R.layout.jedan_ispit, R.id.textViewIspit, godine);
+        ArrayAdapter<Ispit> adapter = new ArrayAdapter(this, R.layout.jedan_ispit, R.id.textViewIspit, rokovi);
         ListView list = (ListView)findViewById(R.id.rok_ispita_listView);
         list.setAdapter(adapter);
         list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -68,8 +68,9 @@ public class RjesavanjeIspitaRok extends Activity {
                 Intent in = new Intent(c, DatabaseHelper.getClassForIntent(table_name));
                 in.putExtra("table_name", table_name);
                 in.putExtra("godina", godina);
-                in.putExtra("rok", godine.get(i));
+                in.putExtra("rok", DatabaseHelper.mapRokValueToTableValue(rokovi.get(i)));
                 startActivity(in);
+                finish();
 
             }
         });
@@ -104,64 +105,64 @@ public class RjesavanjeIspitaRok extends Activity {
         if(name.equalsIgnoreCase("povijest_pitanja")) {
             RealmResults<PovijestPitanja> povijest = realm.where(PovijestPitanja.class).findAll();
             for(PovijestPitanja p : povijest){
-                if(!godine.contains(p.getRok()) && p.getRok() != null)
-                    godine.add(p.getRok());
+                if(!godine.contains(DatabaseHelper.mapRokToPresentationvalue(p.getRok())) && p.getRok() != null)
+                    godine.add(DatabaseHelper.mapRokToPresentationvalue(p.getRok()));
             }
         }
         else if(name.equalsIgnoreCase("pig_pitanja")) {
             RealmResults<Pig_Pitanja> pig = realm.where(Pig_Pitanja.class).findAll();
             for(Pig_Pitanja p : pig){
-                if(!godine.contains(p.getRok()) && p.getRok() != null)
-                    godine.add(p.getRok());
+                if(!godine.contains(DatabaseHelper.mapRokToPresentationvalue(p.getRok())) && p.getRok() != null)
+                    godine.add(DatabaseHelper.mapRokToPresentationvalue(p.getRok()));
             }
         }
         else if(name.equalsIgnoreCase("knjizevnost_pitanja")) {
             RealmResults<KnjizevnostPitanja> pig = realm.where(KnjizevnostPitanja.class).findAll();
             for(KnjizevnostPitanja p : pig){
-                if(!godine.contains(p.getRok()) && p.getRok() != null && !p.getRok().equalsIgnoreCase(""))
-                    godine.add(p.getRok());
+                if(!godine.contains(DatabaseHelper.mapRokToPresentationvalue(p.getRok())) && p.getRok() != null && !p.getRok().equalsIgnoreCase(""))
+                    godine.add(DatabaseHelper.mapRokToPresentationvalue(p.getRok()));
             }
         }
         else if(name.equalsIgnoreCase("biologija_pitanja")) {
             RealmResults<BiologijaPitanje> pig = realm.where(BiologijaPitanje.class).findAll();
             for(BiologijaPitanje p : pig){
-                if(!godine.contains(p.getRok()) && p.getRok() != null)
-                    godine.add(p.getRok());
+                if(!godine.contains(DatabaseHelper.mapRokToPresentationvalue(p.getRok())) && p.getRok() != null)
+                    godine.add(DatabaseHelper.mapRokToPresentationvalue(p.getRok()));
             }
         }
         else if(name.equalsIgnoreCase("sociologija_pitanja")) {
             RealmResults<SocioloijaPitanje> pig = realm.where(SocioloijaPitanje.class).findAll();
             for(SocioloijaPitanje p : pig){
-                if(!godine.contains(p.getRok()) && p.getRok() != null && !p.getRok().equalsIgnoreCase(""))
-                    godine.add(p.getRok());
+                if(!godine.contains(DatabaseHelper.mapRokToPresentationvalue(p.getRok())) && p.getRok() != null && !p.getRok().equalsIgnoreCase(""))
+                    godine.add(DatabaseHelper.mapRokToPresentationvalue(p.getRok()));
             }
         }
         else if(name.equalsIgnoreCase("matematika_pitanja")) {
             RealmResults<MatematikaPitanje> pig = realm.where(MatematikaPitanje.class).findAll();
             for(MatematikaPitanje p : pig){
-                if(!godine.contains(p.getRok()) && p.getRok() != null && !p.getRok().equalsIgnoreCase(""))
-                    godine.add(p.getRok());
+                if(!godine.contains(DatabaseHelper.mapRokToPresentationvalue(p.getRok())) && p.getRok() != null && !p.getRok().equalsIgnoreCase(""))
+                    godine.add(DatabaseHelper.mapRokToPresentationvalue(p.getRok()));
             }
         }
         else if(name.equalsIgnoreCase("fizika_pitanja")) {
             RealmResults<FizikaPitanje> pig = realm.where(FizikaPitanje.class).findAll();
             for(FizikaPitanje p : pig){
-                if(!godine.contains(p.getRok()) && p.getRok() != null && !p.getRok().equalsIgnoreCase(""))
-                    godine.add(p.getRok());
+                if(!godine.contains(DatabaseHelper.mapRokToPresentationvalue(p.getRok())) && p.getRok() != null && !p.getRok().equalsIgnoreCase(""))
+                    godine.add(DatabaseHelper.mapRokToPresentationvalue(p.getRok()));
             }
         }
         else if(name.equalsIgnoreCase("kemija_pitanja")) {
             RealmResults<KemijaPitanje> pig = realm.where(KemijaPitanje.class).findAll();
             for(KemijaPitanje p : pig){
-                if(!godine.contains(p.getRok()) && p.getRok() != null && !p.getRok().equalsIgnoreCase(""))
-                    godine.add(p.getRok());
+                if(!godine.contains(DatabaseHelper.mapRokToPresentationvalue(p.getRok())) && p.getRok() != null && !p.getRok().equalsIgnoreCase(""))
+                    godine.add(DatabaseHelper.mapRokToPresentationvalue(p.getRok()));
             }
         }
         else if(name.equalsIgnoreCase("engleski_pitanja")) {
             RealmResults<EngleskiPitanje> pig = realm.where(EngleskiPitanje.class).findAll();
             for(EngleskiPitanje p : pig){
-                if(!godine.contains(p.getRok()) && p.getRok() != null && !p.getRok().equalsIgnoreCase(""))
-                    godine.add(p.getRok());
+                if(!godine.contains(DatabaseHelper.mapRokToPresentationvalue(p.getRok())) && p.getRok() != null && !p.getRok().equalsIgnoreCase(""))
+                    godine.add(DatabaseHelper.mapRokToPresentationvalue(p.getRok()));
             }
         }
 

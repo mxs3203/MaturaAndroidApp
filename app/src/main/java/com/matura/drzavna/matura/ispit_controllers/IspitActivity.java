@@ -91,7 +91,7 @@ public class IspitActivity extends Activity {
 
 
         if(table_name.equalsIgnoreCase("povijest_pitanja")) {
-            RealmResults<PovijestPitanja> ispiti = realm.where(PovijestPitanja.class).contains("godina", godina).contains("rok",rok).findAll();
+            RealmResults<PovijestPitanja> ispiti = realm.where(PovijestPitanja.class).beginGroup().equalTo("godina", godina).equalTo("rok",rok).endGroup().findAll();
             ispitSize = ispiti.size();
             if(end < ispiti.size()) {
                 List<PovijestPitanja> prvih_pet = ispiti.subList(start, end);
@@ -108,7 +108,7 @@ public class IspitActivity extends Activity {
                 startActivity(is);
             }
         }else if(table_name.equalsIgnoreCase("biologija_pitanja")) {
-            RealmResults<BiologijaPitanje> ispiti = realm.where(BiologijaPitanje.class).beginGroup().contains("godina", godina).contains("rok", rok).endGroup().findAll();
+            RealmResults<BiologijaPitanje> ispiti = realm.where(BiologijaPitanje.class).beginGroup().equalTo("godina", godina).equalTo("rok", rok).endGroup().findAll();
             ispitSize = ispiti.size();
             if(end < ispiti.size()) {
                 List<BiologijaPitanje> prvih_pet = ispiti.subList(start, end);
@@ -125,7 +125,7 @@ public class IspitActivity extends Activity {
             }
         }
         else if(table_name.equalsIgnoreCase("sociologija_pitanja")) {
-            RealmResults<SocioloijaPitanje> ispiti = realm.where(SocioloijaPitanje.class).beginGroup().contains("godina", godina).contains("rok", rok).endGroup().findAll();
+            RealmResults<SocioloijaPitanje> ispiti = realm.where(SocioloijaPitanje.class).beginGroup().equalTo("godina", godina).equalTo("rok", rok).endGroup().findAll();
             ispitSize = ispiti.size();
             if(end < ispiti.size()) {
                 List<SocioloijaPitanje> prvih_pet = ispiti.subList(start, end);
@@ -143,7 +143,7 @@ public class IspitActivity extends Activity {
         }
         else if(table_name.equalsIgnoreCase("pig_pitanja")) {
 
-            RealmResults<Pig_Pitanja> ispiti = realm.where(Pig_Pitanja.class).beginGroup().contains("godina", godina).contains("rok",rok).endGroup().findAll();
+            RealmResults<Pig_Pitanja> ispiti = realm.where(Pig_Pitanja.class).beginGroup().equalTo("godina", godina).equalTo("rok",rok).endGroup().findAll();
             ispitSize = ispiti.size();
             System.out.println("Razina :" + razina + "Godina: " + godina + "Size iz baze:" + ispiti.size());
             if(end < ispiti.size()) {
@@ -162,7 +162,7 @@ public class IspitActivity extends Activity {
         }
         else if(table_name.equalsIgnoreCase("matematika_pitanja")) {
 
-            RealmResults<MatematikaPitanje> ispiti = realm.where(MatematikaPitanje.class).beginGroup().contains("godina", godina).contains("rok",rok).contains("razina",razina).endGroup().findAll();
+            RealmResults<MatematikaPitanje> ispiti = realm.where(MatematikaPitanje.class).beginGroup().equalTo("godina", godina).equalTo("rok",rok).equalTo("razina",razina).endGroup().findAll();
             ispitSize = ispiti.size();
             System.out.println("Razina :" + razina + "Godina: " + godina + "Size iz baze:" + ispiti.size());
             if(end < ispiti.size()) {
@@ -181,7 +181,7 @@ public class IspitActivity extends Activity {
         }
         else if(table_name.equalsIgnoreCase("fizika_pitanja")) {
 
-            RealmResults<FizikaPitanje> ispiti = realm.where(FizikaPitanje.class).beginGroup().contains("godina", godina).contains("rok",rok).endGroup().findAll();
+            RealmResults<FizikaPitanje> ispiti = realm.where(FizikaPitanje.class).beginGroup().equalTo("godina", godina).equalTo("rok",rok).endGroup().findAll();
             ispitSize = ispiti.size();
             System.out.println("Razina :" + razina + "Godina: " + godina + "Size iz baze:" + ispiti.size());
             if(end < ispiti.size()) {
@@ -201,7 +201,7 @@ public class IspitActivity extends Activity {
         }
         else if(table_name.equalsIgnoreCase("knjizevnost_pitanja")) {
 
-            RealmResults<KnjizevnostPitanja> ispiti = realm.where(KnjizevnostPitanja.class).beginGroup().contains("godina", godina).contains("razina",razina).contains("rok",rok).endGroup().findAll();
+            RealmResults<KnjizevnostPitanja> ispiti = realm.where(KnjizevnostPitanja.class).beginGroup().equalTo("godina", godina).equalTo("razina",razina).equalTo("rok",rok).endGroup().findAll();
             ispitSize = ispiti.size();
             System.out.println("Razina :" + razina + "Godina: " + godina + "Size iz baze:" + ispiti.size());
             if(end < ispiti.size()) {
@@ -224,7 +224,7 @@ public class IspitActivity extends Activity {
             }
         }
         else if(table_name.equalsIgnoreCase("gramatika_pitanja")) {
-            RealmResults<GramatikaPitanje> ispiti = realm.where(GramatikaPitanje.class).beginGroup().contains("godina", godina).contains("razina", razina).contains("rok",rok).endGroup().findAll();
+            RealmResults<GramatikaPitanje> ispiti = realm.where(GramatikaPitanje.class).beginGroup().equalTo("godina", godina).equalTo("razina", razina).equalTo("rok",rok).endGroup().findAll();
             ispitSize = ispiti.size();
             System.out.println("Razina :" + razina + "Godina: " + godina + "Size iz baze:" + ispiti.size());
             if (end < ispiti.size()) {
@@ -242,7 +242,7 @@ public class IspitActivity extends Activity {
             }
         }
         else if(table_name.equalsIgnoreCase("kemija_pitanja")) {
-            RealmResults<KemijaPitanje> ispiti = realm.where(KemijaPitanje.class).beginGroup().contains("godina", godina).contains("rok",rok).endGroup().findAll();
+            RealmResults<KemijaPitanje> ispiti = realm.where(KemijaPitanje.class).beginGroup().equalTo("godina", godina).equalTo("rok",rok).endGroup().findAll();
             ispitSize = ispiti.size();
             System.out.println("Razina :" + razina + "Godina: " + godina + "Size iz baze:" + ispiti.size());
             if (end < ispiti.size()) {
@@ -260,7 +260,7 @@ public class IspitActivity extends Activity {
             }
         }
         else if(table_name.equalsIgnoreCase("knjizevnost_tekst")) {
-            RealmResults<KnjizevnostTekst> ispiti = realm.where(KnjizevnostTekst.class).beginGroup().contains("godina", godina).contains("razina", razina).contains("rok",rok).endGroup().findAll();
+            RealmResults<KnjizevnostTekst> ispiti = realm.where(KnjizevnostTekst.class).beginGroup().equalTo("godina", godina).equalTo("razina", razina).equalTo("rok",rok).endGroup().findAll();
             ispitSize = ispiti.size();
             System.out.println("Razina :" + razina + "Godina: " + godina + "Size iz baze:" + ispiti.size());
             if (end < ispiti.size()) {
@@ -282,7 +282,7 @@ public class IspitActivity extends Activity {
             }
         }
         else if(table_name.equalsIgnoreCase("engleski_pitanja")) {
-            RealmResults<EngleskiPitanje> ispiti = realm.where(EngleskiPitanje.class).beginGroup().contains("godina", godina).contains("razina", razina).contains("rok",rok).endGroup().findAll();
+            RealmResults<EngleskiPitanje> ispiti = realm.where(EngleskiPitanje.class).beginGroup().equalTo("godina", godina).equalTo("razina", razina).equalTo("rok",rok).endGroup().findAll();
             ispitSize = ispiti.size();
             System.out.println("ENGLESKI : Razina :" + razina + "Godina: " + godina + "Size iz baze:" + ispiti.size());
             if (end < ispiti.size()) {
@@ -346,11 +346,12 @@ public class IspitActivity extends Activity {
             System.out.println("do kud: "+ end);
 
         }
-
+        System.out.println("--------------------------------------");
         System.out.println("table: " + table_name);
         System.out.println("razina: " + razina);
         System.out.println("rok: " + rok);
         System.out.println("godina: " + godina);
+        System.out.println("--------------------------------------");
     }
 
     private void setupTitleBar()

@@ -52,6 +52,7 @@ public class RjesavanjeIspitaInfoFragments extends Activity {
                     is.putExtra("godina", godina);
                     is.putExtra("rok", rok);
                     startActivity(i);
+
                 }
             });
 

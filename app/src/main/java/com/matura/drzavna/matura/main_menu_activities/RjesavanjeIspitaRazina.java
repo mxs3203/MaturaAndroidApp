@@ -59,6 +59,7 @@ public class RjesavanjeIspitaRazina extends Activity {
                 in.putExtra("rok", rok);
                 in.putExtra("razina", DatabaseHelper.mapRazinaToColumnName(razine[i], table_name));
                 startActivity(in);
+                finish();
             }
         });
 

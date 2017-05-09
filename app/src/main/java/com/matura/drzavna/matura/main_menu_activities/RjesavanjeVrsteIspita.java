@@ -65,6 +65,7 @@ public class RjesavanjeVrsteIspita extends Activity {
                     Intent i = new Intent(c, RjesavanjeGodineIspita.class);
                     i.putExtra("table_name", table_name);
                     startActivity(i);
+                    finish();
                 }
             });
             vrste_ispita.addView(v);

@@ -135,6 +135,7 @@ public class ListAdapterMatematika extends ArrayAdapter<MatematikaPitanje> imple
                 public void onClick(View view) {
                     Intent in = new Intent(getContext(), IspitActivity.class);
                     in.putExtra("table_name", table_name);
+                    in.putExtra("rok", p.getRok());
                     in.putExtra("godina", godina);
                     in.putExtra("start", start);
                     in.putExtra("end", end);

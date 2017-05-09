@@ -136,6 +136,29 @@ public class DatabaseHelper {
 
 
 
+    public static String mapRokToPresentationvalue(String rok)
+    {
+        if(rok.equalsIgnoreCase("jesenski rok"))
+            return "Jesenski Rok";
+        if(rok.equalsIgnoreCase("ljetni rok"))
+            return "Ljetni Rok";
+        if(rok.equalsIgnoreCase("zimski rok"))
+            return "Zimski Rok";
+
+        return "";
+    }
+
+    public static String mapRokValueToTableValue(String rok)
+    {
+        if(rok.equalsIgnoreCase("Jesenski Rok"))
+            return "jesenski rok";
+        if(rok.equalsIgnoreCase("Ljetni Rok"))
+            return "ljetni rok";
+        if(rok.equalsIgnoreCase("Zimski Rok"))
+            return "zimski rok";
+
+        return "";
+    }
 
 
 

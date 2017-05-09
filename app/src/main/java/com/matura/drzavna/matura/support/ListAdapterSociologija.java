@@ -139,6 +139,7 @@ public class ListAdapterSociologija extends ArrayAdapter<SocioloijaPitanje> impl
                     in.putExtra("start", start);
                     in.putExtra("end", end);
                     in.putExtra("razina", p.getRazina());
+                    in.putExtra("rok", p.getRok());
                     a.finish();
                     getContext().startActivity(in);
 

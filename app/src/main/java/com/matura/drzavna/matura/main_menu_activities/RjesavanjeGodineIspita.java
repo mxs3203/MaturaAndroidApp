@@ -70,6 +70,7 @@ public class RjesavanjeGodineIspita extends Activity {
                 in.putExtra("table_name", table_name);
                 in.putExtra("godina", godine.get(i));
                 startActivity(in);
+                finish();
 
             }
         });

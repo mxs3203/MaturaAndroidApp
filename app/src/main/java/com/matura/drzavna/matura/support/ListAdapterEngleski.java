@@ -174,6 +174,7 @@ public class ListAdapterEngleski extends ArrayAdapter<EngleskiPitanje> implement
                         in.putExtra("godina", godina);
                         in.putExtra("start", start);
                         in.putExtra("end", end);
+                        in.putExtra("rok", p.getRok());
                         in.putExtra("razina", p.getRazina());
                         a.finish();
                         getContext().startActivity(in);

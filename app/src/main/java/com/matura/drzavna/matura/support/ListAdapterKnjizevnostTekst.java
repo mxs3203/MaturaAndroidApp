@@ -131,6 +131,7 @@ public class ListAdapterKnjizevnostTekst extends ArrayAdapter<KnjizevnostTekst> 
                     in.putExtra("godina", godina);
                     in.putExtra("start", start);
                     in.putExtra("end", end);
+                    in.putExtra("rok", p.getRok());
                     in.putExtra("razina", p.getRazina());
                     a.finish();
                     getContext().startActivity(in);

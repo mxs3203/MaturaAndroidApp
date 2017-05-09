@@ -126,6 +126,7 @@ public class ListAdapterGramatikaPitanja extends ArrayAdapter<GramatikaPitanje> 
                     in.putExtra("table_name", table_name);
                     in.putExtra("godina", godina);
                     in.putExtra("start", start);
+                    in.putExtra("rok", p.getRok());
                     in.putExtra("end", end);
                     in.putExtra("razina", p.getRazina());
                     a.finish();

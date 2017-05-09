@@ -139,6 +139,7 @@ public class ListAdapterKemija  extends ArrayAdapter<KemijaPitanje> implements V
                     in.putExtra("godina", godina);
                     in.putExtra("start", start);
                     in.putExtra("end", end);
+                    in.putExtra("rok", p.getRok());
                     in.putExtra("razina", p.getRazina());
                     a.finish();
                     getContext().startActivity(in);

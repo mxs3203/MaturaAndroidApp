@@ -63,6 +63,7 @@ public class RjesavanjeIspita extends Activity {
                     intent.putExtra("table_name", DatabaseHelper.mapListViewValuesToTableName(ispiti.get(i)));
                 }
                 startActivity(intent);
+                finish();
             }
         });
 
