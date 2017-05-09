@@ -1,0 +1,49 @@
+<resources>
+
+    <string name="fb_id">253330645131088</string>
+    <string name="app_name">Matura</string>
+    <string name="title_activity_register_">Register_Activity</string>
+    <string name="register_button">Registiraj Se</string>
+    <string name="vec_imas_racun"><u>Već imaš račun?</u></string>
+    <string name="google_prijava">Facebook Prijava</string>
+    <string name="unesi_podatke">ili unesi podatke</string>
+    <string name="prijava">Prijava</string>
+    <string name="email">E - mail</string>
+    <string name="zaporka">Zaporka</string>
+    <string name="ime">Ime</string>
+    <string name="registriraj_se">Registriraj se</string>
+    <string name="nastavi">Nastavi</string>
+
+    <string name="prijavaRjesavanje">Prijava i rješavanje</string>
+    <string name="prijavaText">Prijavi se u aplikaciju i kreni s rješavanjem!</string>
+
+    <string name="pripremi_se_text">Izaberi predmete koje trebaš vježbati i ispite rješavaj kada god poželiš.</string>
+    <string name="pripremiHeader">Pripremi se za maturu</string>
+
+    <string name="ostvari_text">Rješavanjem ispita penji se na ljestvici najboljih rezultata i osvoji nagrade.</string>
+    <string name="ostvari_najHeader">Ostvari najbolji rezultat</string>
+
+    <string name="drzavna_matura">Državna matura</string>
+
+    <string name="o_app_naslov">Državna matura</string>
+    <string name="o_app_text1">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vitae hendrerit enim, et finibus est. Nulla facilisi. In hac habitasse platea dictumst. Nam ipsum erat, tincidunt a libero nec, malesuada tempus sapien. Aenean hendrerit pellentesque magna, quis facilisis lectus mollis ut. Phasellus a luctus metus. Ut ornare purus et magna sodales, eu convallis erat ultricies.</string>
+    <string name="o_app_text2">Ut ut risus eu leo pellentesque mattis. Nulla facilisi. Nulla tempor tempor orci eu molestie. Morbi dolor arcu, congue vitae felis et, rhoncus fermentum nunc. In feugiat laoreet viverra. Nulla vel faucibus est, vitae vehicula turpis. Maecenas eget lorem a quam varius venenatis nec at est. Proin bibendum iaculis pulvinar. Phasellus vestibulum sapien nunc, eget pharetra nunc vulputate eget. Phasellus ullamcorper eu urna ut ultrices. </string>
+
+    <string name="uvjeti_text1">NCVVO ustupa pravo korištenja sadržaja provedenih ispita iz Hrvatskog jezika dostupnog na www.ncvvo.hr vlasniku aplikacije. NCVVO se ograđuje od svih možebitnih pogrešaka u aplikaciji.</string>
+    <string name="ncvvo_link"><u>www.ncvvo.hr</u></string>
+    <string name="title_activity_hrvatski_ispit">HrvatskiIspit</string>
+
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_rjesavanje_ispita_vrste_ispita">RjesavanjeIspitaVrsteIspita</string>
+    <string name="title_activity_vrste_ispita">VrsteIspita</string>
+
+    <string name="napomena_naslov">Napomena</string>
+    <string name="napomena_tekst">Neka pitanja su izbačena zbog njihove nemogućnosti ocjenjivanja.Također, pri rješavanju se boduje samo završni odgovor, a postuputak rješavanja nije dio završne ocjene. Ulaskom u ispit prihvaćaju se Uvjeti korištenja. \n<u>Uvjeti Korištenja</u></string>
+    <string name="formule_naslov">Formule za rješavanje</string>
+    <string name="formule_tekst">Za odabrani ispit dostupne su pomoćne formule. Do njih možeš doći klikom na ikonicu koja će biti dostupna unutar ispita tijekom rješavanja.</string>
+
+    <string name="button_nastavi">Nastavi</string>
+
+</resources>
+
+

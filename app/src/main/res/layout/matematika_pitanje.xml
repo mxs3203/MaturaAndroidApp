@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:auto="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingTop="20dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textViewBrojPitanja"
+        android:background="@drawable/pitanje_number"
+        android:layout_marginLeft="20dp"
+        android:textColor="#4a90e2"
+        android:gravity="center"
+        android:textSize="16sp" />
+
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/pitanje_border"
+        android:layout_margin="20dp">
+
+        <io.github.kexanie.library.MathView
+            android:id="@+id/textViewPitanje"
+            android:textColor="#000"
+            auto:engine="MathJax"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_width="match_parent">
+
+        </io.github.kexanie.library.MathView>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#000"
+            android:id="@+id/textViewPitanje2"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="10dp" />
+    </LinearLayout>
+
+
+    <com.loopj.android.image.SmartImageView
+        android:id="@+id/my_image"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:maxHeight="300dp"
+        android:layout_gravity="center"
+        android:adjustViewBounds="true"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp" />
+
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:layout_marginBottom="5dp"
+        android:id="@+id/odgovorA"
+        android:layout_weight="0.2"
+        android:layout_height="80dp">
+
+        <TextView
+            android:text="A"
+            android:id="@+id/odgASlovo"
+            android:layout_weight="0.1"
+            android:background="#141F4B"
+            android:textColor="#fff"
+            android:layout_width="30dp"
+            android:gravity="center"
+            android:layout_height="match_parent" />
+
+        <io.github.kexanie.library.MathView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/textViewOdgovorA"
+            android:layout_weight="1"
+            android:minHeight="60dp"
+            android:background="@drawable/pitanje_border"
+            android:gravity="center"
+            auto:engine="MathJax"
+            android:textColor="#000" >
+        </io.github.kexanie.library.MathView>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:layout_marginBottom="5dp"
+        android:id="@+id/odgovorB"
+        android:layout_weight="0.2"
+        android:layout_height="80dp">
+
+        <TextView
+            android:text="B"
+            android:id="@+id/odgBSlovo"
+            android:layout_weight="0.1"
+            android:background="#141F4B"
+            android:textColor="#fff"
+            android:layout_width="30dp"
+            android:gravity="center"
+            android:layout_height="match_parent" />
+
+        <io.github.kexanie.library.MathView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/textViewOdgovorB"
+            android:layout_weight="1"
+            android:textColor="#000"
+            auto:engine="MathJax"
+            android:minHeight="60dp"
+            android:background="@drawable/pitanje_border"
+            android:gravity="center"
+            >
+        </io.github.kexanie.library.MathView>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:layout_marginBottom="5dp"
+        android:id="@+id/odgovorC"
+        android:layout_weight="0.2"
+        android:layout_height="80dp">
+
+        <TextView
+            android:text="C"
+            android:id="@+id/odgCSlovo"
+            android:layout_weight="0.1"
+            android:background="#141F4B"
+            android:textColor="#fff"
+            android:layout_width="30dp"
+            android:gravity="center"
+            android:layout_height="match_parent" />
+
+        <io.github.kexanie.library.MathView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/textViewOdgovorC"
+            android:textColor="#000"
+            android:layout_weight="1"
+            auto:engine="MathJax"
+            android:minHeight="60dp"
+            android:background="@drawable/pitanje_border"
+            android:gravity="center" >
+        </io.github.kexanie.library.MathView>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:layout_marginBottom="5dp"
+        android:id="@+id/odgovorD"
+        android:layout_weight="0.2"
+        android:layout_height="80dp">
+
+        <TextView
+            android:text="D"
+            android:id="@+id/odgDSlovo"
+            android:layout_weight="0.1"
+            android:background="#141F4B"
+            android:textColor="#fff"
+            android:layout_width="30dp"
+            android:gravity="center"
+            android:layout_height="match_parent" />
+
+        <io.github.kexanie.library.MathView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textColor="#000"
+            android:id="@+id/textViewOdgovorD"
+            android:layout_weight="1"
+            android:background="@drawable/pitanje_border"
+            android:gravity="center"
+            auto:engine="MathJax"
+            android:minHeight="60dp" >
+        </io.github.kexanie.library.MathView>
+
+
+</LinearLayout>
+
+    <Button
+        android:text="@string/nastavi"
+        android:layout_width="match_parent"
+        android:background="#141F4B"
+        android:textColor="#fff"
+        android:layout_height="60dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:textSize="14sp"
+        android:id="@+id/nastavi_pitanja" />
+
+
+
+</LinearLayout>

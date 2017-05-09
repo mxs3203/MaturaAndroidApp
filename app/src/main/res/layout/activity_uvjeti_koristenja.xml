@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+ <LinearLayout
+        android:orientation="vertical"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/activity_oapplikaciji"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+     android:padding="16dp">
+
+        <TextView
+            android:text="@string/o_app_naslov"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView14"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="30dp"
+            android:textColor="#000"
+            android:textStyle="normal|bold"
+            android:textSize="18sp" />
+
+        <TextView
+            android:text="@string/uvjeti_text1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView15"
+            android:layout_marginBottom="30dp"
+            android:textColor="#000" />
+
+    <TextView
+        android:text="@string/ncvvo_link"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView16"
+        android:textColor="#000" />
+</LinearLayout>
+

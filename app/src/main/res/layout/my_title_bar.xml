@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="horizontal" android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="fill_horizontal|center"
+    android:background="#141F4B">
+
+    <ImageView
+        android:id="@+id/imageViewNavBarIcon1"
+        android:layout_height="20dp"
+        android:layout_width="20dp"
+        android:layout_weight="0.1"
+        android:background="#141F4B" />
+
+    <TextView
+        android:layout_height="wrap_content"
+        android:id="@+id/textViewBarBack"
+        android:textColor="#fff"
+        android:background="#141F4B"
+        android:gravity="center_vertical"
+        android:layout_width="80dp"
+        android:layout_weight="0.3" />
+
+    <TextView
+        android:text="@string/drzavna_matura"
+        android:layout_width="200dp"
+        android:id="@+id/textViewTitle"
+        android:layout_height="50dp"
+        android:background="#141F4B"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:textColor="#fff"
+        android:gravity="center"
+        android:layout_weight="0.2" />
+
+    <TextView
+        android:layout_height="wrap_content"
+        android:id="@+id/textViewBarOptions"
+        android:textColor="#fff"
+        android:background="#141F4B"
+        android:gravity="fill_vertical"
+        android:layout_width="60dp"
+        android:layout_weight="0.1" />
+
+    <ImageView
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        app:srcCompat="@drawable/default_button"
+        android:id="@+id/imageViewIconNavBar2"
+        android:background="#141F4B"
+        android:layout_weight="0.3" />
+</LinearLayout>

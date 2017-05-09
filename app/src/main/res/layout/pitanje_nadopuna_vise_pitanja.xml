@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright (c) 2017. MaturaApp
+  -->
+
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:scrollbars="vertical"
+    android:layout_height="match_parent">
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingTop="20dp">
+
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textViewBrojPitanja"
+        android:background="@drawable/pitanje_number"
+        android:layout_marginLeft="20dp"
+        android:textColor="#4a90e2"
+        android:gravity="center"
+        android:textSize="16sp" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textViewPitanje"
+        android:textColor="#000"
+        android:padding="5dp"
+        android:background="@drawable/pitanje_border"
+        android:layout_margin="20dp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textViewPitanje1"
+        android:textColor="#000"
+        android:padding="5dp"
+        android:background="@drawable/pitanje_border"
+        android:layout_margin="20dp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textViewPitanje2"
+        android:textColor="#000"
+        android:padding="5dp"
+        android:background="@drawable/pitanje_border"
+        android:layout_margin="20dp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textViewPitanje3"
+        android:textColor="#000"
+        android:padding="5dp"
+        android:background="@drawable/pitanje_border"
+        android:layout_margin="20dp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textViewPitanje4"
+        android:textColor="#000"
+        android:padding="5dp"
+        android:background="@drawable/pitanje_border"
+        android:layout_margin="20dp" />
+
+    <com.loopj.android.image.SmartImageView
+        android:id="@+id/my_image"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:adjustViewBounds="true"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="#aaa"
+        android:padding="5dp"
+        android:id="@+id/textViewPitanjeText"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:paddingBottom="5dp" />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:gravity="center"
+        android:padding="20px"
+        android:layout_height="wrap_content"
+        android:weightSum="10">
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/checkBoxTocno1"
+            android:layout_weight="0" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:id="@+id/mojOdg1"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/empty_field"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="20dp"
+            android:padding="20dp"
+            android:layout_marginBottom="20dp"
+            android:layout_margin="20dp"
+            android:layout_weight="10" />
+
+        <Button
+            android:text="Predaj"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/buttonOcijeni1"
+            android:layout_weight="11"
+            android:textColor="#fff"
+            android:background="#141F4B" />
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:gravity="center"
+        android:weightSum="10"
+        android:padding="20px"
+        android:layout_height="wrap_content">
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/checkBoxTocno2"
+            android:layout_weight="0" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:id="@+id/mojOdg2"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/empty_field"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="20dp"
+            android:padding="20dp"
+            android:layout_marginBottom="20dp"
+            android:layout_margin="20dp"
+            android:layout_weight="10" />
+
+        <Button
+            android:text="Predaj"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/buttonOcijeni2"
+            android:layout_weight="11"
+            android:textColor="#fff"
+            android:background="#141F4B" />
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:gravity="center"
+        android:padding="20px"
+        android:weightSum="10"
+        android:layout_height="wrap_content">
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/checkBoxTocno3"
+            android:layout_weight="0" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:id="@+id/mojOdg3"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/empty_field"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="20dp"
+            android:padding="20dp"
+            android:layout_marginBottom="20dp"
+            android:layout_margin="20dp"
+            android:layout_weight="10" />
+
+        <Button
+            android:text="Predaj"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/buttonOcijeni3"
+            android:layout_weight="11"
+            android:textColor="#fff"
+            android:background="#141F4B"/>
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:gravity="center"
+        android:weightSum="10"
+        android:padding="20px"
+        android:layout_height="wrap_content">
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/checkBoxTocno4"
+            android:layout_weight="0" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:id="@+id/mojOdg4"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/empty_field"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="20dp"
+            android:padding="20dp"
+            android:layout_marginBottom="20dp"
+            android:layout_margin="20dp"
+            android:layout_weight="10" />
+
+        <Button
+            android:text="Predaj"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/buttonOcijeni4"
+            android:layout_weight="11"
+            android:textColor="#fff"
+            android:background="#141F4B" />
+    </LinearLayout>
+
+
+    <Button
+        android:text="@string/nastavi"
+        android:layout_width="match_parent"
+        android:background="#141F4B"
+        android:textColor="#fff"
+        android:layout_height="60dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:textSize="14sp"
+        android:id="@+id/nastavi_pitanja" />
+
+
+
+</LinearLayout>
+</ScrollView>
