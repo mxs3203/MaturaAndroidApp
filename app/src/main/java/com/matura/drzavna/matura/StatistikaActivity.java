@@ -5,7 +5,9 @@
 package com.matura.drzavna.matura;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -53,6 +55,8 @@ public class StatistikaActivity extends Activity {
         }
 
 
+
+
         TextView postotakView = (TextView)findViewById(R.id.textViewPostotak);
         TextView ime = (TextView)findViewById(R.id.textViewPredmetIme);
         TextView ukupnoPitanja = (TextView)findViewById(R.id.textViewUkupnoPitanja);
@@ -85,18 +89,28 @@ public class StatistikaActivity extends Activity {
         netocna = 0;
         postotak = (float) 0.0;
         RealmResults<Statistika> stat = realm.where(Statistika.class).equalTo("predmet", predmet).findAll();
-        for(Statistika s : stat)
+
+        if(stat.size() <= 0)
         {
-            if(s.isTocno())
-                tocna++;
-            else
-                netocna++;
+            showDialog(this, "Ne dovoljno podataka", "Nemoguće je izračunati rezultat...");
         }
-        postotak = 100.0f * tocna / stat.size();
-        postotakView.setText("~ "+ postotak + " %" );
-        tocno.setText(tocna + "");
-        netocno.setText(netocna+"");
-        odgovorena.setText(stat.size() + " / " + size );
+        else{
+
+            for(Statistika s : stat)
+            {
+                if(s.isTocno())
+                    tocna++;
+                else
+                    netocna++;
+            }
+            postotak = 100.0f * tocna / stat.size();
+            postotakView.setText("~ "+ postotak + " %" );
+            tocno.setText(tocna + "");
+            netocno.setText(netocna+"");
+            odgovorena.setText(stat.size() + " / " + size );
+
+
+        }
 
 
 
@@ -109,6 +123,24 @@ public class StatistikaActivity extends Activity {
         Intent i = new Intent(this, DrzavnaMaturaMainMenu.class);
         finish();
         startActivity(i);
+    }
+
+    public void showDialog(Activity activity, String title, CharSequence message) {
+        AlertDialog.Builder builder = new AlertDialog.Builder(activity);
+
+        if (title != null) builder.setTitle(title);
+
+        builder.setMessage(message);
+        builder.setPositiveButton("U redu", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                Intent is = new Intent(c, DrzavnaMaturaMainMenu.class);
+                finish();
+                startActivity(is);
+
+            }
+        });
+        builder.show();
     }
 
     private void setupTitleBar(String table_name)
