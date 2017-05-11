@@ -14,6 +14,7 @@ repositories {
     maven { url 'https://maven.fabric.io/public' }
 }
 
+
 apply plugin: 'realm-android'
 
 android {
@@ -23,8 +24,8 @@ android {
         applicationId "com.matura.drzvana.matura"
         minSdkVersion 19
         targetSdkVersion 25
-        versionCode 26
-        versionName "3.4"
+        versionCode 27
+        versionName "3.4.1"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {

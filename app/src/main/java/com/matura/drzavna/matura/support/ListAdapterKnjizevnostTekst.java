@@ -155,9 +155,10 @@ public class ListAdapterKnjizevnostTekst extends ArrayAdapter<KnjizevnostTekst> 
 
 
             TextView broj_pitanja = (TextView) v.findViewById(R.id.textViewBrojPitanja);
-            broj_pitanja.setText(start + position + 1+  "");
 
 
+//            broj_pitanja.setText(start + position + 1+  "");
+            broj_pitanja.setVisibility(View.GONE);
 
 
             if(vrsta_pitanja == 3) {

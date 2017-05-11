@@ -437,6 +437,7 @@ public class ListAdapterFizika extends ArrayAdapter<FizikaPitanje> implements Vi
     public static void ocijeniZadatak(ArrayList<MathView> odgovori, String tocan) {
         try {
             for (MathView v : odgovori) {
+                v.setClickable(false);
                 if (v.getText().equalsIgnoreCase(tocan)) {
                     v.setBackgroundColor(Color.parseColor("#141F4B"));
                 }

@@ -321,8 +321,11 @@ public class ListAdapterSociologija extends ArrayAdapter<SocioloijaPitanje> impl
     {
         for(TextView v : odgovori)
         {
-            if(v.getText().toString().equalsIgnoreCase(tocan))
+            v.setClickable(false);
+            if(v.getText().toString().equalsIgnoreCase(tocan)) {
+                v.setTextColor(Color.WHITE);
                 v.setBackgroundColor(Color.parseColor("#141F4B"));
+            }
             else
                 v.setBackgroundColor(Color.parseColor("#AAAAAA"));
         }

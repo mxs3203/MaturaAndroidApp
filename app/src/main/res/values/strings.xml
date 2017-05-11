@@ -26,8 +26,11 @@
     <string name="drzavna_matura">Državna matura</string>
 
     <string name="o_app_naslov">Državna matura</string>
-    <string name="o_app_text1">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vitae hendrerit enim, et finibus est. Nulla facilisi. In hac habitasse platea dictumst. Nam ipsum erat, tincidunt a libero nec, malesuada tempus sapien. Aenean hendrerit pellentesque magna, quis facilisis lectus mollis ut. Phasellus a luctus metus. Ut ornare purus et magna sodales, eu convallis erat ultricies.</string>
-    <string name="o_app_text2">Ut ut risus eu leo pellentesque mattis. Nulla facilisi. Nulla tempor tempor orci eu molestie. Morbi dolor arcu, congue vitae felis et, rhoncus fermentum nunc. In feugiat laoreet viverra. Nulla vel faucibus est, vitae vehicula turpis. Maecenas eget lorem a quam varius venenatis nec at est. Proin bibendum iaculis pulvinar. Phasellus vestibulum sapien nunc, eget pharetra nunc vulputate eget. Phasellus ullamcorper eu urna ut ultrices. </string>
+    <string name="o_app_text1">Mobilna aplikacija Državna matura sadržava ispitne zadatke državne mature. Zadatci su preuzeti iz ispita koje je polagalo više od 500 pristupnika i koji su provedeni u ljetnome i jesenskome roku u školskim godinama 2012./2013., 2013./2014., 2014./2015. i 2015./2016. Nacionalni centar za vanjsko vrednovanje obrazovanja (u daljnjemu tekstu: Centar) zadržava pravo dopune sadržaja ispitnih zadataka. Aplikacija nije dostupna za Androide 4.4 i starije verzije.
+    U slučaju pravopisne ili sadržajne pogreške uputite komentar na podrska.ma@ncvvo.hr.
+    </string>
+    <string name="o_app_text2">Dokumenti, podatci i informacije objavljeni na mrežnoj stranici Centra www.ncvvo.hr i korišteni za mobilnu aplikaciju Državna matura ne smiju se objavljivati, prenositi, mijenjati, reproducirati, distribuirati, prodavati, kopirati ili na bilo koji način upotrebljavati u komercijalne svrhe bez pisanoga dopuštenja Centra. Upotrebljavaju se isključivo za individualne potrebe korisnika uz poštivanje svih autorskih i vlasničkih prava Centra. Upravljanje grafičkim, tekstualnim, programskim i ostalim sadržajima mobilne aplikacije regulirano je Zakonom o autorskim i srodnim pravima. Neovlašteno korištenje bilo kojega dijela mobilne aplikacije bez dopuštenja Centra smatra se kršenjem autorskih prava i podložno je tužbi.
+    </string>
 
     <string name="uvjeti_text1">NCVVO ustupa pravo korištenja sadržaja provedenih ispita iz Hrvatskog jezika dostupnog na www.ncvvo.hr vlasniku aplikacije. NCVVO se ograđuje od svih možebitnih pogrešaka u aplikaciji.</string>
     <string name="ncvvo_link"><u>www.ncvvo.hr</u></string>
@@ -38,7 +41,9 @@
     <string name="title_activity_vrste_ispita">VrsteIspita</string>
 
     <string name="napomena_naslov">Napomena</string>
-    <string name="napomena_tekst">Neka pitanja su izbačena zbog njihove nemogućnosti ocjenjivanja.Također, pri rješavanju se boduje samo završni odgovor, a postuputak rješavanja nije dio završne ocjene. Ulaskom u ispit prihvaćaju se Uvjeti korištenja. \n<u>Uvjeti Korištenja</u></string>
+    <string name="napomena_tekst">Neka pitanja su izbačena zbog njihove nemogućnosti ocjenjivanja.Također, pri rješavanju se boduje samo završni odgovor, a postuputak rješavanja nije dio završne ocjene. Ulaskom u ispit prihvaćaju se Uvjeti korištenja. \n
+    \n Dokumenti, podatci i informacije objavljeni na mrežnoj stranici Centra www.ncvvo.hr i korišteni za mobilnu aplikaciju Državna matura ne smiju se objavljivati, prenositi, mijenjati, reproducirati, distribuirati, prodavati, kopirati ili na bilo koji način upotrebljavati u komercijalne svrhe bez pisanoga dopuštenja Centra. Upotrebljavaju se isključivo za individualne potrebe korisnika uz poštivanje svih autorskih i vlasničkih prava Centra. Upravljanje grafičkim, tekstualnim, programskim i ostalim sadržajima mobilne aplikacije regulirano je Zakonom o autorskim i srodnim pravima. Neovlašteno korištenje bilo kojega dijela mobilne aplikacije bez dopuštenja Centra smatra se kršenjem autorskih prava i podložno je tužbi.
+    </string>
     <string name="formule_naslov">Formule za rješavanje</string>
     <string name="formule_tekst">Za odabrani ispit dostupne su pomoćne formule. Do njih možeš doći klikom na ikonicu koja će biti dostupna unutar ispita tijekom rješavanja.</string>
 

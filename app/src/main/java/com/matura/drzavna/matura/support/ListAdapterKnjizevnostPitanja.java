@@ -155,8 +155,8 @@ public class ListAdapterKnjizevnostPitanja extends ArrayAdapter<KnjizevnostPitan
 
 
             TextView broj_pitanja = (TextView) v.findViewById(R.id.textViewBrojPitanja);
-            broj_pitanja.setText(start + position + 1+  "");
-
+//            broj_pitanja.setText(start + position + 1+  "");
+            broj_pitanja.setVisibility(View.GONE);
             if(vrsta_pitanja == 3) {
                 pitanje.setText(p.getPitanje());
                 setupABCD(p, v, position);

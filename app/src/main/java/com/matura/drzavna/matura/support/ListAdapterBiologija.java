@@ -414,8 +414,11 @@ public class ListAdapterBiologija extends ArrayAdapter<BiologijaPitanje> impleme
     public static void ocijeniZadatak(ArrayList<TextView> odgovori, String tocan) {
         try {
             for (TextView v : odgovori) {
-                if (v.getText().equals(tocan))
+                v.setClickable(false);
+                if (v.getText().equals(tocan)) {
                     v.setBackgroundColor(Color.parseColor("#141F4B"));
+                    v.setTextColor(Color.WHITE);
+                }
                 else
                     v.setBackgroundColor(Color.parseColor("#AAAAAA"));
             }

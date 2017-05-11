@@ -60,6 +60,7 @@ public class IspitActivity extends Activity {
     Button nastavi;
     String razina;
     int ispitSize = 0;
+    int pitanjeBroj = 1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -99,13 +100,13 @@ public class IspitActivity extends Activity {
                 listView .setAdapter(customAdapter);
             }else{
                 Intent is = new Intent(c, StatistikaActivity.class);
-                finish();
+
                 is.putExtra("predmet", DatabaseHelper.mapTableNameToPresentationValue(table_name));
                 is.putExtra("godina", godina);
                 is.putExtra("razina", razina);
-
                 is.putExtra("size", ispiti.size());
                 startActivity(is);
+                finish();
             }
         }else if(table_name.equalsIgnoreCase("biologija_pitanja")) {
             RealmResults<BiologijaPitanje> ispiti = realm.where(BiologijaPitanje.class).beginGroup().equalTo("godina", godina).equalTo("rok", rok).endGroup().findAll();
@@ -116,12 +117,13 @@ public class IspitActivity extends Activity {
                 listView .setAdapter(customAdapter);
             }else{
                 Intent is = new Intent(c, StatistikaActivity.class);
-                finish();
+
                 is.putExtra("predmet", DatabaseHelper.mapTableNameToPresentationValue(table_name));
                 is.putExtra("godina", godina);
                 is.putExtra("razina", razina);
                 is.putExtra("size", ispiti.size());
                 startActivity(is);
+                finish();
             }
         }
         else if(table_name.equalsIgnoreCase("sociologija_pitanja")) {
@@ -133,12 +135,12 @@ public class IspitActivity extends Activity {
                 listView .setAdapter(customAdapter);
             }else{
                 Intent is = new Intent(c, StatistikaActivity.class);
-                finish();
                 is.putExtra("predmet", DatabaseHelper.mapTableNameToPresentationValue(table_name));
                 is.putExtra("godina", godina);
                 is.putExtra("razina", razina);
                 is.putExtra("size", ispiti.size());
                 startActivity(is);
+                finish();
             }
         }
         else if(table_name.equalsIgnoreCase("pig_pitanja")) {
@@ -152,12 +154,13 @@ public class IspitActivity extends Activity {
                 listView .setAdapter(customAdapter);
             }else{
                 Intent is = new Intent(c, StatistikaActivity.class);
-                finish();
+
                 is.putExtra("predmet", DatabaseHelper.mapTableNameToPresentationValue(table_name));
                 is.putExtra("godina", godina);
                 is.putExtra("razina", razina);
                 is.putExtra("size", ispiti.size());
                 startActivity(is);
+                finish();
             }
         }
         else if(table_name.equalsIgnoreCase("matematika_pitanja")) {
@@ -171,12 +174,13 @@ public class IspitActivity extends Activity {
                 listView .setAdapter(customAdapter);
             }else{
                 Intent is = new Intent(c, StatistikaActivity.class);
-                finish();
+
                 is.putExtra("predmet", DatabaseHelper.mapTableNameToPresentationValue(table_name));
                 is.putExtra("godina", godina);
                 is.putExtra("razina", razina);
                 is.putExtra("size", ispiti.size());
                 startActivity(is);
+                finish();
             }
         }
         else if(table_name.equalsIgnoreCase("fizika_pitanja")) {
@@ -191,39 +195,71 @@ public class IspitActivity extends Activity {
             }else{
 
                 Intent is = new Intent(c, StatistikaActivity.class);
-                finish();
                 is.putExtra("predmet", DatabaseHelper.mapTableNameToPresentationValue(table_name));
                 is.putExtra("godina", godina);
                 is.putExtra("razina", razina);
                 is.putExtra("size", ispiti.size());
                 startActivity(is);
+                finish();
             }
         }
         else if(table_name.equalsIgnoreCase("knjizevnost_pitanja")) {
 
-            RealmResults<KnjizevnostPitanja> ispiti = realm.where(KnjizevnostPitanja.class).beginGroup().equalTo("godina", godina).equalTo("razina",razina).equalTo("rok",rok).endGroup().findAll();
+            System.out.println("knjizevnost pitanja");
+            RealmResults<KnjizevnostPitanja> ispiti = realm.where(KnjizevnostPitanja.class).beginGroup().equalTo("godina", godina).equalTo("razina",razina).equalTo("rok", rok).endGroup().findAll();
             ispitSize = ispiti.size();
             System.out.println("Razina :" + razina + "Godina: " + godina + "Size iz baze:" + ispiti.size());
             if(end < ispiti.size()) {
                 List<KnjizevnostPitanja> prvih_pet = ispiti.subList(start, end);
                 ListAdapterKnjizevnostPitanja customAdapter = new ListAdapterKnjizevnostPitanja(this, R.layout.activity_ispit, prvih_pet, start, end, table_name, godina,this);
-                listView .setAdapter(customAdapter);
+                listView.setAdapter(customAdapter);
             }else{
-                Toast.makeText(this, "Književnost tekstovi počinje...", Toast.LENGTH_SHORT).show();
                 Intent in = new Intent(c, IspitActivity.class);
                 in.putExtra("table_name", "knjizevnost_tekst");
+                pitanjeBroj = end;
+                start = 0;
+                end = 1;
+
+                in.putExtra("godina", godina);
+                in.putExtra("start", start);
+                in.putExtra("end", end);
+                in.putExtra("rok", rok);
+                in.putExtra("razina", razina);
+                startActivity(in);
+                finish();
+
+            }
+        }
+        else if(table_name.equalsIgnoreCase("knjizevnost_tekst")) {
+            odKudDokud.setText(DatabaseHelper.mapTableNameToPresentationValue(table_name));
+            System.out.println("knjizevnost tekst");
+            RealmResults<KnjizevnostTekst> ispiti = realm.where(KnjizevnostTekst.class).beginGroup().equalTo("godina", godina).equalTo("razina", razina).equalTo("rok",rok).endGroup().findAll();
+            ispitSize = ispiti.size();
+            System.out.println("Razina :" + razina + "Godina: " + godina + "Size iz baze:" + ispiti.size());
+            if (end < ispiti.size()) {
+                List<KnjizevnostTekst> prvih_pet = ispiti.subList(start, end);
+                ListAdapterKnjizevnostTekst customAdapter = new ListAdapterKnjizevnostTekst(this, R.layout.activity_ispit, prvih_pet, start, end, table_name, godina,this);
+                listView.setAdapter(customAdapter);
+            } else {
+                Intent in = new Intent(c, IspitActivity.class);
+                in.putExtra("table_name", "gramatika_pitanja");
+                pitanjeBroj = end;
                 start = 0;
                 end = 1;
                 in.putExtra("godina", godina);
                 in.putExtra("start", start);
                 in.putExtra("end", end);
+                in.putExtra("rok", rok);
                 in.putExtra("razina", razina);
+                in.putExtra("broj", pitanjeBroj);
                 finish();
                 startActivity(in);
-
             }
+            realm.close();
         }
         else if(table_name.equalsIgnoreCase("gramatika_pitanja")) {
+            odKudDokud.setText(DatabaseHelper.mapTableNameToPresentationValue(table_name));
+            System.out.println("knjizevnost gramatika");
             RealmResults<GramatikaPitanje> ispiti = realm.where(GramatikaPitanje.class).beginGroup().equalTo("godina", godina).equalTo("razina", razina).equalTo("rok",rok).endGroup().findAll();
             ispitSize = ispiti.size();
             System.out.println("Razina :" + razina + "Godina: " + godina + "Size iz baze:" + ispiti.size());
@@ -240,6 +276,7 @@ public class IspitActivity extends Activity {
                 is.putExtra("size", ispiti.size());
                 startActivity(is);
             }
+            realm.close();
         }
         else if(table_name.equalsIgnoreCase("kemija_pitanja")) {
             RealmResults<KemijaPitanje> ispiti = realm.where(KemijaPitanje.class).beginGroup().equalTo("godina", godina).equalTo("rok",rok).endGroup().findAll();
@@ -258,28 +295,7 @@ public class IspitActivity extends Activity {
                 is.putExtra("size", ispiti.size());
                 startActivity(is);
             }
-        }
-        else if(table_name.equalsIgnoreCase("knjizevnost_tekst")) {
-            RealmResults<KnjizevnostTekst> ispiti = realm.where(KnjizevnostTekst.class).beginGroup().equalTo("godina", godina).equalTo("razina", razina).equalTo("rok",rok).endGroup().findAll();
-            ispitSize = ispiti.size();
-            System.out.println("Razina :" + razina + "Godina: " + godina + "Size iz baze:" + ispiti.size());
-            if (end < ispiti.size()) {
-                List<KnjizevnostTekst> prvih_pet = ispiti.subList(start, end);
-                ListAdapterKnjizevnostTekst customAdapter = new ListAdapterKnjizevnostTekst(this, R.layout.activity_ispit, prvih_pet, start, end, table_name, godina,this);
-                listView.setAdapter(customAdapter);
-            } else {
-                Toast.makeText(this, "Gramatika počinje...", Toast.LENGTH_SHORT).show();
-                Intent in = new Intent(c, IspitActivity.class);
-                in.putExtra("table_name", "gramatika_pitanja");
-                start = 0;
-                end = 1;
-                in.putExtra("godina", godina);
-                in.putExtra("start", start);
-                in.putExtra("end", end);
-                in.putExtra("razina", razina);
-                finish();
-                startActivity(in);
-            }
+            realm.close();
         }
         else if(table_name.equalsIgnoreCase("engleski_pitanja")) {
             RealmResults<EngleskiPitanje> ispiti = realm.where(EngleskiPitanje.class).beginGroup().equalTo("godina", godina).equalTo("razina", razina).equalTo("rok",rok).endGroup().findAll();
@@ -318,6 +334,13 @@ public class IspitActivity extends Activity {
                 end = i.getIntExtra("end", 1) + 1;
                 odKudDokud.setText("Pitanje  " + end);
             }
+            else if(table_name.equalsIgnoreCase("gramatika_pitanja") || table_name.equalsIgnoreCase("knjizevnost_tekst")
+                    || table_name.equalsIgnoreCase("knjizevnost_pitanja"))
+            {
+                start = i.getIntExtra("start", 0) + 1;
+                end = i.getIntExtra("end", 1) + 1;
+                odKudDokud.setText(DatabaseHelper.mapTableNameToPresentationValue(table_name));
+            }
             else
             {
                 start = i.getIntExtra("start", 0) + 1;
@@ -341,9 +364,6 @@ public class IspitActivity extends Activity {
                 end = 1;
                 odKudDokud.setText("Pitanje" + end);
             }
-
-            System.out.println("PRVI PUT\nod kud: "+ start);
-            System.out.println("do kud: "+ end);
 
         }
         System.out.println("--------------------------------------");
