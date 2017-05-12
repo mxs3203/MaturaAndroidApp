@@ -2,6 +2,7 @@ package com.matura.drzavna.matura.support;
 
 import android.os.AsyncTask;
 
+import com.matura.drzavna.matura.Login;
 import com.matura.drzavna.matura.models.User;
 
 import org.json.JSONException;
@@ -22,6 +23,8 @@ import java.net.URLConnection;
 import java.net.URLEncoder;
 
 public class Upload extends AsyncTask<String, Object, String> {
+
+
     @Override
     protected String doInBackground(String... json) {
         try {
@@ -65,6 +68,7 @@ public class Upload extends AsyncTask<String, Object, String> {
             } catch (IOException e) {
                 e.printStackTrace();
             }
+
             return "fail";
         }
     }

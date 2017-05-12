@@ -258,39 +258,19 @@ public class DatabaseHelper {
         return views;
     }
 
-    public static Class getClassForIntent(String tablename) {
-
-        /*if(tablename.equalsIgnoreCase("gramatika_pitanja") ||
-                tablename.equalsIgnoreCase("knjizevnost_povezivanje") ||
-                tablename.equalsIgnoreCase("knjizevnost_pitanja") ||
-                tablename.equalsIgnoreCase("knjizevnost_tekst") ||
-                tablename.equalsIgnoreCase("gramatika_sredivanje") ||
-                tablename.equalsIgnoreCase("matematika_pitanja") ||
-                tablename.equalsIgnoreCase("engleski_pitanja") ){
-
-            return RjesavanjeIspitaRazina.class;
-        }
-        else if(tablename.equalsIgnoreCase("pig_pitanja") || tablename.equalsIgnoreCase("povijest_pitanja") ||
-                tablename.equalsIgnoreCase("biologija_pitanja") || tablename.equalsIgnoreCase("sociologija_pitanja")
-                || tablename.equalsIgnoreCase("fizika_pitanja")  || tablename.equalsIgnoreCase("kemija_pitanja")){
-
-            return RjesavanjeIspitaInfoFragments.class;
-       }
-*/
-        return RjesavanjeIspitaInfoFragments.class;
-    }
-
     public static String mapRazinaToColumnName(String razina, String predmet)
     {
 
-        if(razina.equalsIgnoreCase("Viša razina (A)"))
+        if(razina.equalsIgnoreCase("Viša razina (A)") && (predmet.equals("gramatika_pitanja")
+                || predmet.equals("knjizevnost_pitanja") || predmet.equals("knjizevnost_tekst")))
             return "viša razina";
-        else if (razina.equalsIgnoreCase("Niža razina (B)"))
+        else if (razina.equalsIgnoreCase("Niža razina (B)") && (predmet.equals("gramatika_pitanja")
+                || predmet.equals("knjizevnost_pitanja") || predmet.equals("knjizevnost_tekst")))
             return "niža razina";
 
-        if(razina.equalsIgnoreCase("Viša razina (A)"))
+        if(razina.equalsIgnoreCase("Viša razina (A)") && (predmet.equals("engleski_pitanja") || predmet.equals("matematika_pitanja")))
             return "viša";
-        else if (razina.equalsIgnoreCase("Niža razina (B)"))
+        else if (razina.equalsIgnoreCase("Niža razina (B)") && (predmet.equals("engleski_pitanja") || predmet.equals("matematika_pitanja"))  )
             return "osnovna";
 
         return "";

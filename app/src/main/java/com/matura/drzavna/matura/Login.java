@@ -144,6 +144,7 @@ public class Login extends Activity {
         prijava.setBackgroundColor(Color.parseColor("#000000"));
         prijava.setTextColor(Color.WHITE);
         prijava.setAlpha((float) 0.5);
+        prijava.setClickable(false);
         JSONObject obj = new JSONObject();
         try {
             if (user_name.getText().toString().equalsIgnoreCase("") || password.getText().toString().equalsIgnoreCase("")) {
@@ -151,6 +152,7 @@ public class Login extends Activity {
             } else {
                 obj.put("email", user_name.getText());
                 obj.put("user_password", password.getText());
+
                 Upload u = new Upload();
                 JSONObject response = new JSONObject(u.execute(obj.toString()).get(10000, TimeUnit.MILLISECONDS));
                 if (response.getInt("status") == 200) {
@@ -161,7 +163,9 @@ public class Login extends Activity {
                     Intent i = new Intent(c, StartLoadingScreen.class);
                     i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                     startActivity(i);
+                    prijava.setClickable(true);
                 } else {
+                    prijava.setClickable(true);
                     Toast.makeText(c, "Error", Toast.LENGTH_SHORT).show();
                 }
 
@@ -169,20 +173,26 @@ public class Login extends Activity {
             }
         } catch (JSONException e) {
             e.printStackTrace();
+            prijava.setClickable(true);
         } catch (InterruptedException e) {
             e.printStackTrace();
+            prijava.setClickable(true);
         } catch (ExecutionException e) {
             e.printStackTrace();
+            prijava.setClickable(true);
         } catch (TimeoutException e) {
             e.printStackTrace();
+            prijava.setClickable(true);
         } catch (NullPointerException e) {
             e.printStackTrace();
+            prijava.setClickable(true);
             Toast.makeText(c, "Error", Toast.LENGTH_SHORT).show();
         }
 
         prijava.setBackgroundResource(R.drawable.gray_button);
-        prijava.setTextColor(Color.DKGRAY);
+        prijava.setTextColor(Color.WHITE);
         prijava.setAlpha((float) 1.0);
+        prijava.setClickable(true);
 
     }
 
