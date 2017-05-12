@@ -16,15 +16,6 @@
         android:textColorLink="#fff"
         android:textSize="16sp" />
 
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/imageViewPrijavi"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="108dp"
-        android:background="@drawable/pirjava_rjesavanje" />
-
     <Button
         android:text="@string/nastavi"
         android:layout_width="match_parent"
@@ -52,4 +43,13 @@
         android:layout_below="@+id/imageViewPrijavi"
         android:layout_alignParentStart="true"
         android:textColor="#000" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageViewPrijavi"
+        android:layout_marginTop="52dp"
+        android:background="@drawable/pirjava_rjesavanje"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
 </RelativeLayout>

@@ -38,6 +38,7 @@ public class RjesavanjeIspitaRok extends Activity {
     ImageView back;
     Context c;
     Realm realm;
+    String razina = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,6 +56,9 @@ public class RjesavanjeIspitaRok extends Activity {
         Intent i = getIntent();
         final String table_name = i.getStringExtra("table_name");
         final String godina = i.getStringExtra("godina");
+        if(i.hasExtra("razina"))
+             razina = i.getStringExtra("razina");
+
         setupTitleBar(DatabaseHelper.mapTableNameToPresentationValue(table_name));
 
         final ArrayList<String> rokovi = getAllRokovi(table_name);
@@ -65,7 +69,7 @@ public class RjesavanjeIspitaRok extends Activity {
         list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                Intent in = new Intent(c, DatabaseHelper.getClassForIntent(table_name));
+                Intent in = new Intent(c, RjesavanjeIspitaRazina.class);
                 in.putExtra("table_name", table_name);
                 in.putExtra("godina", godina);
                 in.putExtra("rok", DatabaseHelper.mapRokValueToTableValue(rokovi.get(i)));

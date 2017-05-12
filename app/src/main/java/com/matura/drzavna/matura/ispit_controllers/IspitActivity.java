@@ -376,7 +376,7 @@ public class IspitActivity extends Activity {
 
     private void setupTitleBar()
     {
-        if(table_name.equalsIgnoreCase("matematika_pitanja") || table_name.equalsIgnoreCase("kemija_pitanja")
+        /*if(table_name.equalsIgnoreCase("matematika_pitanja") || table_name.equalsIgnoreCase("kemija_pitanja")
              || table_name.equalsIgnoreCase("fizika_pitanja")) {
             formule = (ImageView) findViewById(R.id.imageViewIconNavBar2);
             formuletext = (TextView) findViewById(R.id.textViewBarOptions);
@@ -389,6 +389,7 @@ public class IspitActivity extends Activity {
                 }
             });
         }
+        */
         back = (ImageView) findViewById(R.id.imageViewNavBarIcon1);
         back.setImageResource(R.drawable.nav_bar_arrow);
         back.setOnClickListener(new View.OnClickListener() {

@@ -17,10 +17,10 @@
         android:layout_height="60dp"
         android:id="@+id/buttonPrijava"
         android:background="@drawable/gray_button"
-        android:textColor="#808080"
+        android:textColor="#fff"
         android:layout_alignParentBottom="true"
         android:layout_alignParentStart="true"
-        android:backgroundTint="#ddd"
+        android:backgroundTint="#141F4B"
         android:textSize="18sp" />
 
     <EditText

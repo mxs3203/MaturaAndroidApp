@@ -32,7 +32,8 @@
     <string name="o_app_text2">Dokumenti, podatci i informacije objavljeni na mrežnoj stranici Centra www.ncvvo.hr i korišteni za mobilnu aplikaciju Državna matura ne smiju se objavljivati, prenositi, mijenjati, reproducirati, distribuirati, prodavati, kopirati ili na bilo koji način upotrebljavati u komercijalne svrhe bez pisanoga dopuštenja Centra. Upotrebljavaju se isključivo za individualne potrebe korisnika uz poštivanje svih autorskih i vlasničkih prava Centra. Upravljanje grafičkim, tekstualnim, programskim i ostalim sadržajima mobilne aplikacije regulirano je Zakonom o autorskim i srodnim pravima. Neovlašteno korištenje bilo kojega dijela mobilne aplikacije bez dopuštenja Centra smatra se kršenjem autorskih prava i podložno je tužbi.
     </string>
 
-    <string name="uvjeti_text1">NCVVO ustupa pravo korištenja sadržaja provedenih ispita iz Hrvatskog jezika dostupnog na www.ncvvo.hr vlasniku aplikacije. NCVVO se ograđuje od svih možebitnih pogrešaka u aplikaciji.</string>
+    <string name="uvjeti_text1">Dokumenti, podatci i informacije objavljeni na mrežnoj stranici Centra www.ncvvo.hr i korišteni za mobilnu aplikaciju Državna matura ne smiju se objavljivati, prenositi, mijenjati, reproducirati, distribuirati, prodavati, kopirati ili na bilo koji način upotrebljavati u komercijalne svrhe bez pisanoga dopuštenja Centra. Upotrebljavaju se isključivo za individualne potrebe korisnika uz poštivanje svih autorskih i vlasničkih prava Centra. Upravljanje grafičkim, tekstualnim, programskim i ostalim sadržajima mobilne aplikacije regulirano je Zakonom o autorskim i srodnim pravima. Neovlašteno korištenje bilo kojega dijela mobilne aplikacije bez dopuštenja Centra smatra se kršenjem autorskih prava i podložno je tužbi.
+    </string>
     <string name="ncvvo_link"><u>www.ncvvo.hr</u></string>
     <string name="title_activity_hrvatski_ispit">HrvatskiIspit</string>
 
@@ -42,7 +43,6 @@
 
     <string name="napomena_naslov">Napomena</string>
     <string name="napomena_tekst">Neka pitanja su izbačena zbog njihove nemogućnosti ocjenjivanja.Također, pri rješavanju se boduje samo završni odgovor, a postuputak rješavanja nije dio završne ocjene. Ulaskom u ispit prihvaćaju se Uvjeti korištenja. \n
-    \n Dokumenti, podatci i informacije objavljeni na mrežnoj stranici Centra www.ncvvo.hr i korišteni za mobilnu aplikaciju Državna matura ne smiju se objavljivati, prenositi, mijenjati, reproducirati, distribuirati, prodavati, kopirati ili na bilo koji način upotrebljavati u komercijalne svrhe bez pisanoga dopuštenja Centra. Upotrebljavaju se isključivo za individualne potrebe korisnika uz poštivanje svih autorskih i vlasničkih prava Centra. Upravljanje grafičkim, tekstualnim, programskim i ostalim sadržajima mobilne aplikacije regulirano je Zakonom o autorskim i srodnim pravima. Neovlašteno korištenje bilo kojega dijela mobilne aplikacije bez dopuštenja Centra smatra se kršenjem autorskih prava i podložno je tužbi.
     </string>
     <string name="formule_naslov">Formule za rješavanje</string>
     <string name="formule_tekst">Za odabrani ispit dostupne su pomoćne formule. Do njih možeš doći klikom na ikonicu koja će biti dostupna unutar ispita tijekom rješavanja.</string>

@@ -22,23 +22,23 @@
     <Button
         android:layout_width="match_parent"
         android:id="@+id/buttonRjesavanje"
-        android:layout_height="wrap_content"
+        android:layout_height="80dp"
         android:layout_marginBottom="10dp"
         android:background="@drawable/rjesavanje_ispita" />
 
     <Button
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="80dp"
         android:id="@+id/buttonOApp"
         android:layout_marginBottom="10dp"
         android:background="@drawable/o_app" />
 
     <Button
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
         android:id="@+id/buttonUvjeti"
         android:layout_marginEnd="10dp"
-        android:background="@drawable/uvjeti_koristenja" />
+        android:background="@drawable/opci_uvjeti"
+        android:layout_height="80dp" />
 
 
     <!--<io.github.kexanie.library.MathView-->

@@ -45,22 +45,7 @@
             android:layout_marginBottom="30dp"
             android:textColor="#000" />
 
-        <TextView
-            android:text="Opći Uvjeti"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/textView18"
-            android:textStyle="bold"
-            android:textSize="16sp"
-            android:textColor="#000"
-            android:layout_marginBottom="10dp" />
 
-        <TextView
-            android:text="@string/o_app_text2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/textView16"
-            android:textColor="#000" />
     </LinearLayout>
 
 

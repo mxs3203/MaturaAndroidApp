@@ -42,6 +42,18 @@ public class RjesavanjeIspitaRazina extends Activity {
         final String table_name = i.getStringExtra("table_name");
         final String godina = i.getStringExtra("godina");
         final String rok = i.getStringExtra("rok");
+        if(table_name.equalsIgnoreCase("pig_pitanja") || table_name.equalsIgnoreCase("povijest_pitanja") ||
+                table_name.equalsIgnoreCase("biologija_pitanja") || table_name.equalsIgnoreCase("sociologija_pitanja")
+                || table_name.equalsIgnoreCase("fizika_pitanja")  || table_name.equalsIgnoreCase("kemija_pitanja")){
+
+            Intent in = new Intent(c, RjesavanjeIspitaInfoFragments.class);
+            in.putExtra("table_name", table_name);
+            in.putExtra("godina", godina);
+            in.putExtra("rok", rok);
+            startActivity(in);
+            finish();
+        }
+
         System.out.println("koja bazica godine ispita: "+table_name + " iz godine " + godina);
         setupTitleBar(DatabaseHelper.mapTableNameToPresentationValue(table_name));
         final String[] razine = new String[2];
@@ -53,7 +65,7 @@ public class RjesavanjeIspitaRazina extends Activity {
         list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                Intent in = new Intent(c, IspitActivity.class);
+                Intent in = new Intent(c, RjesavanjeIspitaInfoFragments.class);
                 in.putExtra("table_name", table_name);
                 in.putExtra("godina", godina);
                 in.putExtra("rok", rok);

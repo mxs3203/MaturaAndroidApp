@@ -259,7 +259,8 @@ public class DatabaseHelper {
     }
 
     public static Class getClassForIntent(String tablename) {
-        if(tablename.equalsIgnoreCase("gramatika_pitanja") ||
+
+        /*if(tablename.equalsIgnoreCase("gramatika_pitanja") ||
                 tablename.equalsIgnoreCase("knjizevnost_povezivanje") ||
                 tablename.equalsIgnoreCase("knjizevnost_pitanja") ||
                 tablename.equalsIgnoreCase("knjizevnost_tekst") ||
@@ -274,28 +275,23 @@ public class DatabaseHelper {
                 || tablename.equalsIgnoreCase("fizika_pitanja")  || tablename.equalsIgnoreCase("kemija_pitanja")){
 
             return RjesavanjeIspitaInfoFragments.class;
-        }
-
-        return null;
+       }
+*/
+        return RjesavanjeIspitaInfoFragments.class;
     }
 
     public static String mapRazinaToColumnName(String razina, String predmet)
     {
-        if(predmet.equalsIgnoreCase("gramatika_pitanja") ||
-                predmet.equalsIgnoreCase("knjizevnost_povezivanje") ||
-                predmet.equalsIgnoreCase("knjizevnost_pitanja") ||
-                predmet.equalsIgnoreCase("knjizevnost_tekst") ||
-                predmet.equalsIgnoreCase("gramatika_sredivanje")) {
-            if(razina.equalsIgnoreCase("Viša razina (A)"))
-                return "viša razina";
-            else if (razina.equalsIgnoreCase("Niža razina (B)"))
-                return "niža razina";
-        }
-        else if(predmet.equalsIgnoreCase("matematika_pitanja") || predmet.equalsIgnoreCase("engleski_pitanja") )
-            if(razina.equalsIgnoreCase("Viša razina (A)"))
-                return "viša";
-            else if (razina.equalsIgnoreCase("Niža razina (B)"))
-                return "osnovna";
+
+        if(razina.equalsIgnoreCase("Viša razina (A)"))
+            return "viša razina";
+        else if (razina.equalsIgnoreCase("Niža razina (B)"))
+            return "niža razina";
+
+        if(razina.equalsIgnoreCase("Viša razina (A)"))
+            return "viša";
+        else if (razina.equalsIgnoreCase("Niža razina (B)"))
+            return "osnovna";
 
         return "";
     }

@@ -24,12 +24,14 @@ public class RjesavanjeIspitaInfoFragments extends Activity {
     ImageView pocni, napomenaSlika;
     static boolean napomenaFormule = false;
 
+    String razina = null;
 
     @Override
     protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         c = this;
+
 
         if(!RjesavanjeIspitaInfoFragments.napomenaFormule) {
             requestWindowFeature(Window.FEATURE_CUSTOM_TITLE);
@@ -44,6 +46,9 @@ public class RjesavanjeIspitaInfoFragments extends Activity {
                     final String table_name = i.getStringExtra("table_name");
                     final String godina = i.getStringExtra("godina");
                     final String rok = i.getStringExtra("rok");
+                    if(i.hasExtra("razina"))
+                         razina = i.getStringExtra("razina");
+
                     setupTitleBar(DatabaseHelper.mapTableNameToPresentationValue(table_name));
                     RjesavanjeIspitaInfoFragments.napomenaFormule = true;
                     finish();
@@ -51,6 +56,9 @@ public class RjesavanjeIspitaInfoFragments extends Activity {
                     is.putExtra("table_name", table_name);
                     is.putExtra("godina", godina);
                     is.putExtra("rok", rok);
+                    if(razina != null)
+                        is.putExtra("razina", razina);
+
                     startActivity(i);
 
                 }
@@ -74,6 +82,8 @@ public class RjesavanjeIspitaInfoFragments extends Activity {
             final String table_name = i.getStringExtra("table_name");
             final String godina = i.getStringExtra("godina");
             final String rok = i.getStringExtra("rok");
+            if(i.hasExtra("razina"))
+                razina = i.getStringExtra("razina");
             RjesavanjeIspitaInfoFragments.napomenaFormule = false;
             setupTitleBar(DatabaseHelper.mapTableNameToPresentationValue(table_name));
             pocni = (ImageView) findViewById(R.id.imageViewPocni);
@@ -85,6 +95,9 @@ public class RjesavanjeIspitaInfoFragments extends Activity {
                     is.putExtra("table_name", table_name);
                     is.putExtra("godina", godina);
                     is.putExtra("rok", rok);
+                    if(razina != null)
+                        is.putExtra("razina", razina);
+
                     startActivity(is);
                 }
             });
