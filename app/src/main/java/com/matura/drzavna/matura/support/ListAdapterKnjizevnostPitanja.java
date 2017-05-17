@@ -5,6 +5,9 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
 import android.support.annotation.Nullable;
+import android.text.Html;
+import android.text.SpannableString;
+import android.text.style.UnderlineSpan;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -158,12 +161,11 @@ public class ListAdapterKnjizevnostPitanja extends ArrayAdapter<KnjizevnostPitan
 //            broj_pitanja.setText(start + position + 1+  "");
             broj_pitanja.setVisibility(View.GONE);
             if(vrsta_pitanja == 3) {
-                pitanje.setText(p.getPitanje());
+                pitanje.setText(Html.fromHtml(p.getPitanje()));
                 setupABCD(p, v, position);
             }
             else if(vrsta_pitanja == 2){
-
-                pitanje.setText(p.getPitanje().replaceAll("_____", "..."));
+                pitanje.setText(Html.fromHtml(p.getPitanje()));
             }
         }
 

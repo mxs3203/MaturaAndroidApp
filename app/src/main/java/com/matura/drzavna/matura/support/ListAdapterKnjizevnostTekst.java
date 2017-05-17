@@ -5,6 +5,9 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
 import android.support.annotation.Nullable;
+import android.text.Html;
+import android.text.SpannableString;
+import android.text.style.UnderlineSpan;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -145,6 +148,7 @@ public class ListAdapterKnjizevnostTekst extends ArrayAdapter<KnjizevnostTekst> 
 
             TextView pitanje = (TextView) v.findViewById(R.id.textViewPitanje);
 
+
             pitanje.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
@@ -162,12 +166,12 @@ public class ListAdapterKnjizevnostTekst extends ArrayAdapter<KnjizevnostTekst> 
 
 
             if(vrsta_pitanja == 3) {
-                pitanje.setText(p.getPitanje());
+
+                pitanje.setText(Html.fromHtml(p.getPitanje()));
                 setupABCD(p, v, position);
             }
             else if(vrsta_pitanja == 2){
-
-                pitanje.setText(p.getPitanje().replaceAll("_____", "..."));
+                pitanje.setText(Html.fromHtml(p.getPitanje()));
             }
 
 
