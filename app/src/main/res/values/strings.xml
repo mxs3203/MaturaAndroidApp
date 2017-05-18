@@ -8,9 +8,10 @@
     <string name="google_prijava">Facebook Prijava</string>
     <string name="unesi_podatke">ili unesi podatke</string>
     <string name="prijava">Prijava</string>
-    <string name="email">E - mail</string>
+    <string name="email">E - mail ili Korisničko Ime</string>
+    <string name="samoemail">E - mail </string>
     <string name="zaporka">Zaporka</string>
-    <string name="ime">Ime</string>
+    <string name="ime">Korisničko Ime</string>
     <string name="registriraj_se">Registriraj se</string>
     <string name="nastavi">Nastavi</string>
 
@@ -42,8 +43,10 @@
     <string name="title_activity_vrste_ispita">VrsteIspita</string>
 
     <string name="napomena_naslov">Napomena</string>
-    <string name="napomena_tekst">Neka pitanja su izbačena zbog njihove nemogućnosti ocjenjivanja.Također, pri rješavanju se boduje samo završni odgovor, a postuputak rješavanja nije dio završne ocjene. Ulaskom u ispit prihvaćaju se Uvjeti korištenja. \n
-    </string>
+    <string name="napomena_tekst">Pojedina pitanja izbačena su radi tehničkih razloga.
+Pri rješavanju zadataka boduje se završni odgovor. Postupak rješavanja nije dio završne ocjene.
+Neki odgovori ne ulaze u statistiku prolaznosti radi nemogućnosti ocjenjivanja.
+Rješavanjem ispitnih zadataka u aplikaciji Državna matura, prihvaćaju se Opći uvjeti korištenja.</string>
     <string name="formule_naslov">Formule za rješavanje</string>
     <string name="formule_tekst">Za odabrani ispit dostupne su pomoćne formule. Do njih možeš doći klikom na ikonicu koja će biti dostupna unutar ispita tijekom rješavanja.</string>
 

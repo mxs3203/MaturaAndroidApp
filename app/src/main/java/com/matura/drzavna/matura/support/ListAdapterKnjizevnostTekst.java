@@ -220,6 +220,7 @@ public class ListAdapterKnjizevnostTekst extends ArrayAdapter<KnjizevnostTekst> 
                 @Override
                 public void onClick(View view) {
                     odgovorA.setAlpha((float) 0.5);
+                    odgovorA.setClickable(false);
                     ListAdapterPovijest.ocijeniZadatak(odgovori, p.getTocan());
                     realm.executeTransaction(new Realm.Transaction() {
                         public void execute(Realm realm) {
@@ -238,6 +239,7 @@ public class ListAdapterKnjizevnostTekst extends ArrayAdapter<KnjizevnostTekst> 
                 @Override
                 public void onClick(View view) {
                     odgovorB.setAlpha((float) 0.5);
+                    odgovorB.setClickable(false);
                     ListAdapterPovijest.ocijeniZadatak(odgovori, p.getTocan());
                     realm.executeTransaction(new Realm.Transaction() {
                         public void execute(Realm realm) {
@@ -257,6 +259,7 @@ public class ListAdapterKnjizevnostTekst extends ArrayAdapter<KnjizevnostTekst> 
                 @Override
                 public void onClick(View view) {
                     odgovorC.setAlpha((float) 0.5);
+                    odgovorC.setClickable(false);
                     ListAdapterPovijest.ocijeniZadatak(odgovori, p.getTocan());
                     realm.executeTransaction(new Realm.Transaction() {
                         public void execute(Realm realm) {
@@ -275,6 +278,7 @@ public class ListAdapterKnjizevnostTekst extends ArrayAdapter<KnjizevnostTekst> 
             odgovorD.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
+                    odgovorD.setClickable(false);
                     odgovorD.setAlpha((float) 0.5);
                     ListAdapterPovijest.ocijeniZadatak(odgovori, p.getTocan());
                     realm.executeTransaction(new Realm.Transaction() {

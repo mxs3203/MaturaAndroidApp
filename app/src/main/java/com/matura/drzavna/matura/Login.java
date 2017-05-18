@@ -20,10 +20,12 @@ import com.facebook.FacebookSdk;
 import com.facebook.GraphRequest;
 import com.facebook.GraphResponse;
 import com.facebook.Profile;
+import com.facebook.login.LoginManager;
 import com.facebook.login.LoginResult;
 import com.facebook.login.widget.LoginButton;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import com.matura.drzavna.matura.models.PovijestPitanja;
 import com.matura.drzavna.matura.models.User;
 import com.matura.drzavna.matura.support.DatabaseHelper;
 import com.matura.drzavna.matura.support.Upload;
@@ -39,6 +41,7 @@ import java.util.concurrent.TimeoutException;
 
 import io.realm.Realm;
 import io.realm.RealmConfiguration;
+import io.realm.RealmResults;
 import io.realm.exceptions.RealmMigrationNeededException;
 
 public class Login extends Activity {
@@ -64,13 +67,16 @@ public class Login extends Activity {
         Realm.init(this);
         realm = DatabaseHelper.resetRealm();
 
-
+        User user = realm.where(User.class).findFirst();
         AccessToken fb_token = AccessToken.getCurrentAccessToken();
-        if (fb_token != null) {
-            Intent i = new Intent(c, StartLoadingScreen.class);
-            i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-            startActivity(i);
-        }
+        try {
+            if (fb_token != null || user != null) {
+                Intent i = new Intent(c, StartLoadingScreen.class);
+                i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                startActivity(i);
+            }
+        }catch(NullPointerException e)
+        {e.printStackTrace();}
         fb = (LoginButton) findViewById(R.id.login_button);
         List<String> permissionNeeds = Arrays.asList("email", "public_profile");
         fb.setReadPermissions(permissionNeeds);
@@ -108,6 +114,8 @@ public class Login extends Activity {
 
             @Override
             public void onError(FacebookException e) {
+                LoginManager.getInstance().logOut();
+
                 Toast.makeText(c, "Error", Toast.LENGTH_SHORT).show();
             }
         });
@@ -166,7 +174,7 @@ public class Login extends Activity {
                     prijava.setClickable(true);
                 } else {
                     prijava.setClickable(true);
-                    Toast.makeText(c, "Error", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(c, "Not found", Toast.LENGTH_SHORT).show();
                 }
 
 

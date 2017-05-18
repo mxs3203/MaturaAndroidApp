@@ -104,7 +104,7 @@ public class StatistikaActivity extends Activity {
                     netocna++;
             }
             postotak = 100.0f * tocna / stat.size();
-            postotakView.setText("~ "+ postotak + " %" );
+            postotakView.setText("~"+String.format("%.2f", postotak )+"%");
             tocno.setText(tocna + "");
             netocno.setText(netocna+"");
             odgovorena.setText(stat.size() + " / " + size );

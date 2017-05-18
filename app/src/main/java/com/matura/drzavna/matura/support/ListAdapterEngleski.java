@@ -259,7 +259,7 @@ public class ListAdapterEngleski extends ArrayAdapter<EngleskiPitanje> implement
                 public void onClick(View view) {
                     odgovorA.setAlpha((float) 0.5);
                     ListAdapterPovijest.ocijeniZadatak(odgovori, p.getTocan());
-
+                    odgovorA.setClickable(false);
                     realm.executeTransaction(new Realm.Transaction() {
                         public void execute(Realm realm) {
                             Statistika s = new Statistika(odgovorA.getText().toString().equalsIgnoreCase(p.getTocan()), odgovorA.getText().toString(), p.getPitanje(), p.getTocan(),
@@ -277,6 +277,7 @@ public class ListAdapterEngleski extends ArrayAdapter<EngleskiPitanje> implement
                 @Override
                 public void onClick(View view) {
                     odgovorB.setAlpha((float) 0.5);
+                    odgovorB.setClickable(false);
                     ListAdapterPovijest.ocijeniZadatak(odgovori, p.getTocan());
                     realm.executeTransaction(new Realm.Transaction() {
                         public void execute(Realm realm) {
@@ -296,6 +297,7 @@ public class ListAdapterEngleski extends ArrayAdapter<EngleskiPitanje> implement
                 @Override
                 public void onClick(View view) {
                     odgovorC.setAlpha((float) 0.5);
+                    odgovorC.setClickable(false);
                     ListAdapterPovijest.ocijeniZadatak(odgovori, p.getTocan());
                     realm.executeTransaction(new Realm.Transaction() {
                         public void execute(Realm realm) {
@@ -317,6 +319,7 @@ public class ListAdapterEngleski extends ArrayAdapter<EngleskiPitanje> implement
                     @Override
                     public void onClick(View view) {
                         odgovorD.setAlpha((float) 0.5);
+                        odgovorD.setClickable(false);
                         ListAdapterPovijest.ocijeniZadatak(odgovori, p.getTocan());
                         realm.executeTransaction(new Realm.Transaction() {
                             public void execute(Realm realm) {

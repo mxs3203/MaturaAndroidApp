@@ -205,6 +205,7 @@ public class ListAdapterGramatikaPitanja extends ArrayAdapter<GramatikaPitanje> 
                 @Override
                 public void onClick(View view) {
                     odgovorA.setAlpha((float) 0.5);
+                    odgovorA.setClickable(false);
                     ListAdapterPovijest.ocijeniZadatak(odgovori,p.getTocan());
                     realm.executeTransaction(new Realm.Transaction() {
                         public void execute(Realm realm) {
@@ -223,6 +224,7 @@ public class ListAdapterGramatikaPitanja extends ArrayAdapter<GramatikaPitanje> 
                 @Override
                 public void onClick(View view) {
                     odgovorB.setAlpha((float) 0.5);
+                    odgovorB.setClickable(false);
                     ListAdapterPovijest.ocijeniZadatak(odgovori,p.getTocan());
                     realm.executeTransaction(new Realm.Transaction() {
                         public void execute(Realm realm) {
@@ -242,6 +244,7 @@ public class ListAdapterGramatikaPitanja extends ArrayAdapter<GramatikaPitanje> 
                 @Override
                 public void onClick(View view) {
                     odgovorC.setAlpha((float) 0.5);
+                    odgovorC.setClickable(false);
                    ListAdapterPovijest.ocijeniZadatak(odgovori,p.getTocan());
                     realm.executeTransaction(new Realm.Transaction() {
                         public void execute(Realm realm) {
@@ -262,6 +265,7 @@ public class ListAdapterGramatikaPitanja extends ArrayAdapter<GramatikaPitanje> 
                 public void onClick(View view) {
                     ListAdapterPovijest.ocijeniZadatak(odgovori,p.getTocan());
                     odgovorD.setAlpha((float) 0.5);
+                    odgovorD.setClickable(false);
                     realm.executeTransaction(new Realm.Transaction() {
                         public void execute(Realm realm) {
                             Statistika s = new Statistika(odgovorD.getText().toString().equalsIgnoreCase(p.getTocan()), odgovorD.getText().toString(), p.getPitanje(), p.getTocan(),

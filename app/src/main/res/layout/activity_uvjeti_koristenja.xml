@@ -21,7 +21,7 @@
 
 
     <TextView
-        android:text="Opći Uvjeti"
+        android:text="Opći uvjeti korištenja"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/textView18"

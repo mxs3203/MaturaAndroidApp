@@ -218,6 +218,7 @@ public class ListAdapterSociologija extends ArrayAdapter<SocioloijaPitanje> impl
                 @Override
                 public void onClick(View view) {
                     odgovorA.setAlpha((float) 0.5);
+                    odgovorA.setClickable(false);
                     ocijeniZadatak(odgovori, p.getTocan());
                     realm.executeTransaction(new Realm.Transaction() {
                         public void execute(Realm realm) {
@@ -236,6 +237,7 @@ public class ListAdapterSociologija extends ArrayAdapter<SocioloijaPitanje> impl
                 @Override
                 public void onClick(View view) {
                     odgovorB.setAlpha((float) 0.5);
+                    odgovorB.setClickable(false);
                     ocijeniZadatak(odgovori, p.getTocan());
                     realm.executeTransaction(new Realm.Transaction() {
                         public void execute(Realm realm) {
@@ -254,6 +256,7 @@ public class ListAdapterSociologija extends ArrayAdapter<SocioloijaPitanje> impl
             odgovorC.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
+                    odgovorC.setClickable(false);
                     odgovorC.setAlpha((float) 0.5);
                     ocijeniZadatak(odgovori, p.getTocan());
                     realm.executeTransaction(new Realm.Transaction() {
@@ -275,6 +278,7 @@ public class ListAdapterSociologija extends ArrayAdapter<SocioloijaPitanje> impl
                 odgD.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
+                        odgovorD.setClickable(false);
                         odgovorD.setAlpha((float) 0.5);
                         ocijeniZadatak(odgovori, p.getTocan());
                         realm.executeTransaction(new Realm.Transaction() {

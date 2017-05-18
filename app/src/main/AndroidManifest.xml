@@ -13,7 +13,7 @@
         <activity android:name=".StartLoadingScreen" />
         <activity
             android:name=".Register_Activity"
-            android:label="Državna Matura"
+            android:label="Državna matura"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>

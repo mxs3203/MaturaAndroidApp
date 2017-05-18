@@ -338,7 +338,7 @@ public class ListAdapterFizika extends ArrayAdapter<FizikaPitanje> implements Vi
                     public void onClick(View view) {
                         odgovorA.setAlpha((float) 0.5);
                         ocijeniZadatak(odgovori,p.getTocan());
-
+                        odgovorA.setClickable(false);
                         realm.executeTransaction(new Realm.Transaction() {
                             public void execute(Realm realm) {
                             Statistika s = new Statistika(odgovorA.getText().equalsIgnoreCase(p.getTocan()), odgovorA.getText(), p.getPitanje(), p.getTocan(),
@@ -362,7 +362,7 @@ public class ListAdapterFizika extends ArrayAdapter<FizikaPitanje> implements Vi
                     public void onClick(View view) {
                         odgovorB.setAlpha((float) 0.5);
                         ocijeniZadatak(odgovori,p.getTocan());
-
+                        odgovorB.setClickable(false);
                         realm.executeTransaction(new Realm.Transaction() {
                             public void execute(Realm realm) {
                         Statistika s = new Statistika(odgovorB.getText().equalsIgnoreCase(p.getTocan()), odgovorB.getText(), p.getPitanje(), p.getTocan(),
@@ -385,6 +385,7 @@ public class ListAdapterFizika extends ArrayAdapter<FizikaPitanje> implements Vi
                     @Override
                     public void onClick(View view) {
                         odgovorC.setAlpha((float) 0.5);
+                        odgovorC.setClickable(false);
                         ocijeniZadatak(odgovori,p.getTocan());
 
                         realm.executeTransaction(new Realm.Transaction() {
@@ -412,6 +413,7 @@ public class ListAdapterFizika extends ArrayAdapter<FizikaPitanje> implements Vi
                         @Override
                         public void onClick(View view) {
                             odgovorD.setAlpha((float) 0.5);
+                            odgovorD.setClickable(false);
                             ocijeniZadatak(odgovori, p.getTocan());
                             realm.executeTransaction(new Realm.Transaction() {
                                 public void execute(Realm realm) {

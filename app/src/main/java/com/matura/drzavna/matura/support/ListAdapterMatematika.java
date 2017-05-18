@@ -254,6 +254,7 @@ public class ListAdapterMatematika extends ArrayAdapter<MatematikaPitanje> imple
                     @Override
                     public void onClick(View view) {
                         odgA.setAlpha((float) 0.5);
+                        odgovorA.setClickable(false);
                       ListAdapterFizika.ocijeniZadatak(odgovori,p.getTocan());
                         realm.executeTransaction(new Realm.Transaction() {
                             public void execute(Realm realm) {
@@ -275,6 +276,7 @@ public class ListAdapterMatematika extends ArrayAdapter<MatematikaPitanje> imple
                     @Override
                     public void onClick(View view) {
                         odgB.setAlpha((float) 0.5);
+                        odgovorB.setClickable(false);
                         ListAdapterFizika.ocijeniZadatak(odgovori,p.getTocan());
                         realm.executeTransaction(new Realm.Transaction() {
                             public void execute(Realm realm) {
@@ -297,6 +299,7 @@ public class ListAdapterMatematika extends ArrayAdapter<MatematikaPitanje> imple
                     @Override
                     public void onClick(View view) {
                         odgC.setAlpha((float) 0.5);
+                        odgovorC.setClickable(false);
                         ListAdapterFizika.ocijeniZadatak(odgovori,p.getTocan());
                         realm.executeTransaction(new Realm.Transaction() {
                             public void execute(Realm realm) {
@@ -319,6 +322,7 @@ public class ListAdapterMatematika extends ArrayAdapter<MatematikaPitanje> imple
                 odgD.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
+                        odgovorD.setClickable(false);
                         odgD.setAlpha((float) 0.5);
                         ListAdapterFizika.ocijeniZadatak(odgovori,p.getTocan());
                         realm.executeTransaction(new Realm.Transaction() {

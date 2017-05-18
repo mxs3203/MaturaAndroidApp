@@ -138,13 +138,15 @@ public class DatabaseHelper {
 
     public static String mapRokToPresentationvalue(String rok)
     {
-        if(rok.equalsIgnoreCase("jesenski rok"))
-            return "Jesenski Rok";
-        if(rok.equalsIgnoreCase("ljetni rok"))
-            return "Ljetni Rok";
-        if(rok.equalsIgnoreCase("zimski rok"))
-            return "Zimski Rok";
-
+        try {
+            if (rok.equalsIgnoreCase("jesenski rok"))
+                return "Jesenski Rok";
+            if (rok.equalsIgnoreCase("ljetni rok"))
+                return "Ljetni Rok";
+            if (rok.equalsIgnoreCase("zimski rok"))
+                return "Zimski Rok";
+        }catch (Exception e)
+        {e.printStackTrace();}
         return "";
     }
 
@@ -168,7 +170,7 @@ public class DatabaseHelper {
         if(tablename.equalsIgnoreCase("gramatika_pitanja"))
             return "Hrvatski Jezik";
         else if(tablename.equalsIgnoreCase("pig_pitanja"))
-            return "Politika i Gospodarstvo";
+            return "Politika i gospodarstvo";
         else if(tablename.equalsIgnoreCase("povijest_pitanja"))
             return "Povijest";
         else if(tablename.equalsIgnoreCase("knjizevnost_pitanja"))
@@ -197,7 +199,7 @@ public class DatabaseHelper {
     {
         if(value.equalsIgnoreCase("Hrvatski Jezik"))
             return "knjizevnost_pitanja,gramatika_pitanja,knjizevnost_povezivanje,knjizevnost_tekst,gramatika_sredivanje";
-        else if(value.equalsIgnoreCase("Politika i Gospodarstvo"))
+        else if(value.equalsIgnoreCase("Politika i gospodarstvo"))
             return "pig_pitanja";
         else if(value.equalsIgnoreCase("Povijest"))
             return "povijest_pitanja";

@@ -177,6 +177,8 @@ public class ListAdapterPIG extends ArrayAdapter<Pig_Pitanja> implements View.On
                 tocno.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
+                        tocno.setClickable(false);
+                        netocno.setClickable(false);
                         tocno.setAlpha((float) 0.4);
                         if(p.isTocno_netocno().equalsIgnoreCase("1"))
                         {
@@ -208,6 +210,8 @@ public class ListAdapterPIG extends ArrayAdapter<Pig_Pitanja> implements View.On
                 netocno.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
+                        tocno.setClickable(false);
+                        netocno.setClickable(false);
                         netocno.setAlpha((float) 0.4);
                         if(p.isTocno_netocno().equalsIgnoreCase("0"))
                         {

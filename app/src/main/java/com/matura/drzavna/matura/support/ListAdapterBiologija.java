@@ -107,7 +107,7 @@ public class ListAdapterBiologija extends ArrayAdapter<BiologijaPitanje> impleme
 
             SmartImageView slika = (SmartImageView) v.findViewById(R.id.my_image);
             if (p.getSlika_pitanje() != null) {
-                slika.setImageUrl("http://drzavnamatura.000webhostapp.com/images/biologija/" + p.getSlika_pitanje() + ".png");
+                slika.setImageUrl("http://drzavnamatura.000webhostapp.com/images/biologija/" + p.getSlika_pitanje() + ".png",2);
             }
 
             nastavi = (Button)v.findViewById(R.id.nastavi_pitanja);
@@ -208,7 +208,7 @@ public class ListAdapterBiologija extends ArrayAdapter<BiologijaPitanje> impleme
                 public void onClick(View view) {
                     odgovorA.setAlpha((float) 0.5);
                     ocijeniZadatak(odgovori, p.getTocan());
-
+                    odgovorA.setClickable(false);
                     realm.executeTransaction(new Realm.Transaction() {
                         public void execute(Realm realm) {
                             Statistika s = new Statistika(odgovorA.getText().toString().equalsIgnoreCase(p.getTocan()), odgovorA.getText().toString(), p.getPitanje1(), p.getTocan(),
@@ -229,7 +229,7 @@ public class ListAdapterBiologija extends ArrayAdapter<BiologijaPitanje> impleme
                 public void onClick(View view) {
                     odgovorB.setAlpha((float) 0.5);
                     ocijeniZadatak(odgovori, p.getTocan());
-
+                    odgovorB.setClickable(false);
                     realm.executeTransaction(new Realm.Transaction() {
                         public void execute(Realm realm) {
                             Statistika s = new Statistika(odgovorB.getText().toString().equalsIgnoreCase(p.getTocan()), odgovorB.getText().toString(), p.getPitanje1(), p.getTocan(),
@@ -250,7 +250,7 @@ public class ListAdapterBiologija extends ArrayAdapter<BiologijaPitanje> impleme
                 public void onClick(View view) {
                     odgovorC.setAlpha((float) 0.5);
                     ocijeniZadatak(odgovori, p.getTocan());
-
+                    odgovorC.setClickable(false);
                     realm.executeTransaction(new Realm.Transaction() {
                         public void execute(Realm realm) {
                             Statistika s = new Statistika(odgovorC.getText().toString().equalsIgnoreCase(p.getTocan()), odgovorC.getText().toString(), p.getPitanje1(), p.getTocan(),
@@ -271,7 +271,7 @@ public class ListAdapterBiologija extends ArrayAdapter<BiologijaPitanje> impleme
                 public void onClick(View view) {
                     odgovorD.setAlpha((float) 0.5);
                     ocijeniZadatak(odgovori, p.getTocan());
-
+                    odgovorD.setClickable(false);
                     realm.executeTransaction(new Realm.Transaction() {
                         public void execute(Realm realm) {
                             Statistika s = new Statistika(odgovorD.getText().toString().equalsIgnoreCase(p.getTocan()), odgovorD.getText().toString(), p.getPitanje1(), p.getTocan(),

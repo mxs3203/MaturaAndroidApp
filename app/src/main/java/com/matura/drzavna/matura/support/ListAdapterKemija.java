@@ -260,6 +260,7 @@ public class ListAdapterKemija  extends ArrayAdapter<KemijaPitanje> implements V
                     @Override
                     public void onClick(View view) {
                         odgA.setAlpha((float) 0.5);
+                        odgovorA.setClickable(false);
                         ListAdapterFizika.ocijeniZadatak(odgovori,p.getTocan());
                         realm.executeTransaction(new Realm.Transaction() {
                             public void execute(Realm realm) {
@@ -284,6 +285,7 @@ public class ListAdapterKemija  extends ArrayAdapter<KemijaPitanje> implements V
                     @Override
                     public void onClick(View view) {
                         odgB.setAlpha((float) 0.5);
+                        odgovorB.setClickable(false);
                         ListAdapterFizika.ocijeniZadatak(odgovori,p.getTocan());
                         realm.executeTransaction(new Realm.Transaction() {
                             public void execute(Realm realm) {
@@ -306,6 +308,7 @@ public class ListAdapterKemija  extends ArrayAdapter<KemijaPitanje> implements V
                     @Override
                     public void onClick(View view) {
                         odgC.setAlpha((float) 0.5);
+                        odgovorC.setClickable(false);
                         ListAdapterFizika.ocijeniZadatak(odgovori,p.getTocan());
                         realm.executeTransaction(new Realm.Transaction() {
                             public void execute(Realm realm) {
@@ -332,6 +335,7 @@ public class ListAdapterKemija  extends ArrayAdapter<KemijaPitanje> implements V
                         @Override
                         public void onClick(View view) {
                             odgD.setAlpha((float) 0.5);
+                            odgovorD.setClickable(false);
                             ListAdapterFizika.ocijeniZadatak(odgovori, p.getTocan());
                             realm.executeTransaction(new Realm.Transaction() {
                                 public void execute(Realm realm) {

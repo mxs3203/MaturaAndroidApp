@@ -38,6 +38,6 @@ public class UvjetiKoristenja extends Activity {
             }
         });
         title = (TextView)findViewById(R.id.textViewTitle);
-        title.setText("Uvjeti korištenja");
+        title.setText("Opći uvjeti korištenja");
     }
 }

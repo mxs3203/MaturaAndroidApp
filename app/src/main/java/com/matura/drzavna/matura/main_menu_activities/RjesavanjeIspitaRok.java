@@ -13,6 +13,7 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.matura.drzavna.matura.DrzavnaMaturaMainMenu;
 import com.matura.drzavna.matura.R;
 import com.matura.drzavna.matura.ispit_controllers.IspitActivity;
 import com.matura.drzavna.matura.models.BiologijaPitanje;
@@ -97,6 +98,8 @@ public class RjesavanjeIspitaRok extends Activity {
             @Override
             public void onClick(View view) {
                 finish();
+                Intent i = new Intent(c, DrzavnaMaturaMainMenu.class);
+                startActivity(i);
             }
         });
         title = (TextView)findViewById(R.id.textViewTitle);
