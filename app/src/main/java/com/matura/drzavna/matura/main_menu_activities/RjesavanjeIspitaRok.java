@@ -172,6 +172,20 @@ public class RjesavanjeIspitaRok extends Activity {
                     godine.add(DatabaseHelper.mapRokToPresentationvalue(p.getRok()));
             }
         }
+        else if(name.equalsIgnoreCase("psihologija_pitanja")) {
+            RealmResults<EngleskiPitanje> pig = realm.where(EngleskiPitanje.class).findAll();
+            for(EngleskiPitanje p : pig){
+                if(!godine.contains(DatabaseHelper.mapRokToPresentationvalue(p.getRok())) && p.getRok() != null && !p.getRok().equalsIgnoreCase(""))
+                    godine.add(DatabaseHelper.mapRokToPresentationvalue(p.getRok()));
+            }
+        }
+        else if(name.equalsIgnoreCase("likovni_pitanja")) {
+            RealmResults<EngleskiPitanje> pig = realm.where(EngleskiPitanje.class).findAll();
+            for(EngleskiPitanje p : pig){
+                if(!godine.contains(DatabaseHelper.mapRokToPresentationvalue(p.getRok())) && p.getRok() != null && !p.getRok().equalsIgnoreCase(""))
+                    godine.add(DatabaseHelper.mapRokToPresentationvalue(p.getRok()));
+            }
+        }
 
         return godine;
 

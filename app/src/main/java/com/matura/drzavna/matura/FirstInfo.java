@@ -4,43 +4,19 @@
 
 package com.matura.drzavna.matura;
 
-import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
-import android.os.Handler;
+import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.ViewPager;
-import android.os.Bundle;
-import android.view.View;
-import android.widget.ProgressBar;
-import android.widget.Spinner;
 
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.matura.drzavna.matura.models.DostupniIspiti;
-import com.matura.drzavna.matura.models.Ispit;
-import com.matura.drzavna.matura.models.User;
-import com.matura.drzavna.matura.support.DatabaseHelper;
-import com.matura.drzavna.matura.support.Download;
 import com.matura.drzavna.matura.support.FirstInfoFragmentPagerManager;
-
-import java.util.ArrayList;
-import java.util.concurrent.ExecutionException;
-import java.util.concurrent.TimeUnit;
-import java.util.concurrent.TimeoutException;
-
-import io.realm.Realm;
-import io.realm.RealmList;
-import io.realm.RealmModel;
-import io.realm.RealmResults;
 
 
 public class FirstInfo extends FragmentActivity {
 
     Context c;
-    Realm realm;
-    RealmList<Ispit> ispitiZaDownload = new RealmList<>();
 
 
     @Override

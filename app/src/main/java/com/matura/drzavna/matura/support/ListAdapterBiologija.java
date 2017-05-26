@@ -211,7 +211,7 @@ public class ListAdapterBiologija extends ArrayAdapter<BiologijaPitanje> impleme
                     odgovorA.setClickable(false);
                     realm.executeTransaction(new Realm.Transaction() {
                         public void execute(Realm realm) {
-                            Statistika s = new Statistika(odgovorA.getText().toString().equalsIgnoreCase(p.getTocan()), odgovorA.getText().toString(), p.getPitanje1(), p.getTocan(),
+                            Statistika s = new Statistika(odgovorA.getText().toString().equalsIgnoreCase(p.getTocan()), odgovorA.getText().toString(), p.getPitanje_text(), p.getTocan(),
                                     DatabaseHelper.mapTableNameToPresentationValue(table_name),p.getGodina(),p.getRok(), p.getRazina());
                             realm.insertOrUpdate(s);
 
@@ -232,7 +232,7 @@ public class ListAdapterBiologija extends ArrayAdapter<BiologijaPitanje> impleme
                     odgovorB.setClickable(false);
                     realm.executeTransaction(new Realm.Transaction() {
                         public void execute(Realm realm) {
-                            Statistika s = new Statistika(odgovorB.getText().toString().equalsIgnoreCase(p.getTocan()), odgovorB.getText().toString(), p.getPitanje1(), p.getTocan(),
+                            Statistika s = new Statistika(odgovorA.getText().toString().equalsIgnoreCase(p.getTocan()), odgovorB.getText().toString(), p.getPitanje_text(), p.getTocan(),
                                     DatabaseHelper.mapTableNameToPresentationValue(table_name),p.getGodina(),p.getRok(), p.getRazina());
                             realm.insertOrUpdate(s);
                         }
@@ -253,7 +253,7 @@ public class ListAdapterBiologija extends ArrayAdapter<BiologijaPitanje> impleme
                     odgovorC.setClickable(false);
                     realm.executeTransaction(new Realm.Transaction() {
                         public void execute(Realm realm) {
-                            Statistika s = new Statistika(odgovorC.getText().toString().equalsIgnoreCase(p.getTocan()), odgovorC.getText().toString(), p.getPitanje1(), p.getTocan(),
+                            Statistika s = new Statistika(odgovorA.getText().toString().equalsIgnoreCase(p.getTocan()), odgovorC.getText().toString(), p.getPitanje_text(), p.getTocan(),
                                     DatabaseHelper.mapTableNameToPresentationValue(table_name),p.getGodina(),p.getRok(), p.getRazina());
                             realm.insertOrUpdate(s);
                         }
@@ -274,7 +274,7 @@ public class ListAdapterBiologija extends ArrayAdapter<BiologijaPitanje> impleme
                     odgovorD.setClickable(false);
                     realm.executeTransaction(new Realm.Transaction() {
                         public void execute(Realm realm) {
-                            Statistika s = new Statistika(odgovorD.getText().toString().equalsIgnoreCase(p.getTocan()), odgovorD.getText().toString(), p.getPitanje1(), p.getTocan(),
+                            Statistika s = new Statistika(odgovorA.getText().toString().equalsIgnoreCase(p.getTocan()), odgovorD.getText().toString(), p.getPitanje_text(), p.getTocan(),
                                     DatabaseHelper.mapTableNameToPresentationValue(table_name),p.getGodina(),p.getRok(), p.getRazina());
                             realm.insertOrUpdate(s);
                         }

@@ -78,7 +78,8 @@
             android:id="@+id/buttonOcijeni"
             android:layout_weight="11"
             android:textColor="#fff"
-            android:background="#141F4B" />
+            android:background="#141F4B"
+            android:padding="20dp" />
     </LinearLayout>
 
     <Button

@@ -171,8 +171,8 @@ public class ListAdapterFizika extends ArrayAdapter<FizikaPitanje> implements Vi
                 broj_pitanja.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        Toast.makeText(getContext(), "Pitanje koje nije dobro:  ID="
-                                + p.getPitanje_id() + ", " + p.getGodina() + "," + p.getRok() + "," + p.getRazina(), Toast.LENGTH_LONG).show();
+//                        Toast.makeText(getContext(), "Pitanje koje nije dobro:  ID="
+//                                + p.getPitanje_id() + ", " + p.getGodina() + "," + p.getRok() + "," + p.getRazina(), Toast.LENGTH_LONG).show();
                     }
                 });
 

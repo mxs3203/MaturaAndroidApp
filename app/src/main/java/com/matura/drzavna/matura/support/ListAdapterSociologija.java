@@ -153,8 +153,8 @@ public class ListAdapterSociologija extends ArrayAdapter<SocioloijaPitanje> impl
             pitanje.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    Toast.makeText(getContext(), "Pitanje koje nije dobro:  ID="
-                            + p.getPitanje_id() + ", " +p.getGodina() +","+ p.getRok() + ","+p.getRazina(), Toast.LENGTH_LONG).show();
+//                    Toast.makeText(getContext(), "Pitanje koje nije dobro:  ID="
+//                            + p.getPitanje_id() + ", " +p.getGodina() +","+ p.getRok() + ","+p.getRazina(), Toast.LENGTH_LONG).show();
                 }
             });
 

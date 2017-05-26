@@ -21,9 +21,11 @@ import com.matura.drzavna.matura.models.FizikaPitanje;
 import com.matura.drzavna.matura.models.Ispit;
 import com.matura.drzavna.matura.models.KemijaPitanje;
 import com.matura.drzavna.matura.models.KnjizevnostPitanja;
+import com.matura.drzavna.matura.models.LikovniPitanje;
 import com.matura.drzavna.matura.models.MatematikaPitanje;
 import com.matura.drzavna.matura.models.Pig_Pitanja;
 import com.matura.drzavna.matura.models.PovijestPitanja;
+import com.matura.drzavna.matura.models.PsihologijaPitanje;
 import com.matura.drzavna.matura.models.SocioloijaPitanje;
 import com.matura.drzavna.matura.support.DatabaseHelper;
 
@@ -145,6 +147,21 @@ public class RjesavanjeGodineIspita extends Activity {
                     godine.add(p.getGodina());
             }
         }
+        else if(name.equalsIgnoreCase("psihologija_pitanja")) {
+            RealmResults<PsihologijaPitanje> pig = realm.where(PsihologijaPitanje.class).findAll();
+            for(PsihologijaPitanje p : pig){
+                if(!godine.contains(p.getGodina()) && p.getGodina() != null && !p.getGodina().equalsIgnoreCase(""))
+                    godine.add(p.getGodina());
+            }
+        }
+        else if(name.equalsIgnoreCase("likovni_pitanja")) {
+            RealmResults<LikovniPitanje> pig = realm.where(LikovniPitanje.class).findAll();
+            for(LikovniPitanje p : pig){
+                if(!godine.contains(p.getGodina()) && p.getGodina() != null && !p.getGodina().equalsIgnoreCase(""))
+                    godine.add(p.getGodina());
+            }
+        }
+
 
         return godine;
 

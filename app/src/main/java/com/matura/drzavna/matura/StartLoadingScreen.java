@@ -81,6 +81,13 @@ public class StartLoadingScreen extends Activity {
                         RealmList<Ispit> ispiti_sa_servera = response.getSvi_ispiti();
                         RealmResults<Ispit> ispiti_u_bazi = realm.where(Ispit.class).findAll();
 
+
+                        ispiti_sa_servera.add(new Ispit(99,"psihologija_pitanja", 1));
+//                        ispiti_sa_servera.add(new Ispit(98,"geografija_pitanja", 1));
+                        ispiti_sa_servera.add(new Ispit(97,"likovni_pitanja", 1));
+//                        ispiti_sa_servera.add(new Ispit(96,"informatika_pitanja", 1));
+//                        ispiti_sa_servera.add(new Ispit(95,"njemacki_pitanja", 1));
+
                         System.out.println("SIZE u bazi: " + ispiti_u_bazi.size());
                         int i = 0;
                         for (Ispit ispit : ispiti_sa_servera) {

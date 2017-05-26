@@ -48,7 +48,7 @@ public class ListAdapterPovijest extends ArrayAdapter<PovijestPitanja> implement
         super(context, resource);
         this.items = items;
         this.start = start;
-        this.a =a;
+        this.a = a;
         this.end = end;
         this.table_name = table_name;
         this.godina = godina;
@@ -152,8 +152,8 @@ public class ListAdapterPovijest extends ArrayAdapter<PovijestPitanja> implement
             pitanje.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    Toast.makeText(getContext(), "Pitanje koje nije dobro:  ID="
-                            + p.getPitanje_id() + ", " +p.getGodina() +","+ p.getRok() + ","+p.getRazina(), Toast.LENGTH_LONG).show();
+//                    Toast.makeText(getContext(), "Pitanje koje nije dobro:  ID="
+//                            + p.getPitanje_id() + ", " +p.getGodina() +","+ p.getRok() + ","+p.getRazina(), Toast.LENGTH_LONG).show();
                 }
             });
 

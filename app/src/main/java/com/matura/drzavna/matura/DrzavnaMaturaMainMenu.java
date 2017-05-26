@@ -32,9 +32,11 @@ import com.matura.drzavna.matura.models.KemijaPitanje;
 import com.matura.drzavna.matura.models.KnjizevnostPitanja;
 import com.matura.drzavna.matura.models.KnjizevnostPovezivanje;
 import com.matura.drzavna.matura.models.KnjizevnostTekst;
+import com.matura.drzavna.matura.models.LikovniPitanje;
 import com.matura.drzavna.matura.models.MatematikaPitanje;
 import com.matura.drzavna.matura.models.Pig_Pitanja;
 import com.matura.drzavna.matura.models.PovijestPitanja;
+import com.matura.drzavna.matura.models.PsihologijaPitanje;
 import com.matura.drzavna.matura.models.SocioloijaPitanje;
 import com.matura.drzavna.matura.models.Statistika;
 import com.matura.drzavna.matura.support.DatabaseHelper;
@@ -127,6 +129,12 @@ public class DrzavnaMaturaMainMenu extends Activity implements View.OnClickListe
 
         RealmResults<EngleskiPitanje> ispiti_u_bazi13 = realm.where(EngleskiPitanje.class).findAll();
         System.out.println("Engleski broj pitanja: "+ispiti_u_bazi13.size());
+
+        RealmResults<LikovniPitanje> ispiti_u_bazi14 = realm.where(LikovniPitanje.class).findAll();
+        System.out.println("Likovni broj pitanja: "+ispiti_u_bazi14.size());
+
+        RealmResults<PsihologijaPitanje> ispiti_u_bazi15 = realm.where(PsihologijaPitanje.class).findAll();
+        System.out.println("Psih broj pitanja: "+ispiti_u_bazi15.size());
 
 
     }

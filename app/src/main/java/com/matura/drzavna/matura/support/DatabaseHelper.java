@@ -28,8 +28,10 @@ import com.matura.drzavna.matura.models.lists.SvaPitanjaEngleski;
 import com.matura.drzavna.matura.models.lists.SvaPitanjaFizika;
 import com.matura.drzavna.matura.models.lists.SvaPitanjaKemija;
 import com.matura.drzavna.matura.models.lists.SvaPitanjaKnjizevnost;
+import com.matura.drzavna.matura.models.lists.SvaPitanjaLikovni;
 import com.matura.drzavna.matura.models.lists.SvaPitanjaPIG;
 import com.matura.drzavna.matura.models.lists.SvaPitanjaPovijest;
+import com.matura.drzavna.matura.models.lists.SvaPitanjaPsihologija;
 import com.matura.drzavna.matura.models.lists.SvaSociologijaPitanja;
 
 import java.io.File;
@@ -101,6 +103,10 @@ public class DatabaseHelper {
             return SvaPitanjaKemija.class;
         else if(ispit.equalsIgnoreCase("engleski_pitanja"))
             return SvaPitanjaEngleski.class;
+        else if(ispit.equalsIgnoreCase("psihologija_pitanja"))
+            return SvaPitanjaPsihologija.class;
+        else if(ispit.equalsIgnoreCase("likovni_pitanja"))
+            return SvaPitanjaLikovni.class;
         return  null;
     }
     public static Object getObjectsForJsonMapping(String ispit)
@@ -131,6 +137,10 @@ public class DatabaseHelper {
             return new SvaPitanjaKemija();
         else if(ispit.equalsIgnoreCase("engleski_pitanja"))
             return new SvaPitanjaEngleski();
+        else if(ispit.equalsIgnoreCase("psihologija_pitanja"))
+            return new SvaPitanjaPsihologija();
+        else if(ispit.equalsIgnoreCase("likovni_pitanja"))
+            return new SvaPitanjaLikovni();
         return  null;
     }
 
@@ -193,6 +203,10 @@ public class DatabaseHelper {
             return "Kemija";
         else if(tablename.equalsIgnoreCase("engleski_pitanja"))
             return "Engleski";
+        else if(tablename.equalsIgnoreCase("psihologija_pitanja"))
+            return "Psihologija";
+        else if(tablename.equalsIgnoreCase("likovni_pitanja"))
+            return "Likovni";
         return  "";
     }
     public static String mapListViewValuesToTableName(String value)
@@ -215,6 +229,10 @@ public class DatabaseHelper {
             return "kemija_pitanja";
         else if(value.equalsIgnoreCase("Engleski"))
             return "engleski_pitanja";
+        else if(value.equalsIgnoreCase("Psihologija"))
+            return "psihologija_pitanja";
+        else if(value.equalsIgnoreCase("Likovni"))
+            return "likovni_pitanja";
         return  "";
     }
 

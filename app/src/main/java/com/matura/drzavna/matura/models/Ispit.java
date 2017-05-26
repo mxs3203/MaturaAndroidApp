@@ -14,6 +14,14 @@ public class Ispit extends RealmObject
     String ime_ispita;
     int db_version;
 
+    public Ispit(){}
+
+    public Ispit(int id, String ime_ispita, int db_version) {
+        this.id = id;
+        this.ime_ispita = ime_ispita;
+        this.db_version = db_version;
+    }
+
     public int getDb_version() {
         return db_version;
     }

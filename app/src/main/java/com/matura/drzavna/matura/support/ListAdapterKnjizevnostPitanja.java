@@ -150,8 +150,8 @@ public class ListAdapterKnjizevnostPitanja extends ArrayAdapter<KnjizevnostPitan
             pitanje.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    Toast.makeText(getContext(), "Pitanje koje nije dobro:  ID="
-                            + p.getPitanjeID() + ", " +p.getGodina() +","+ p.getRok() + ","+p.getRazina(), Toast.LENGTH_LONG).show();
+//                    Toast.makeText(getContext(), "Pitanje koje nije dobro:  ID="
+//                            + p.getPitanjeID() + ", " +p.getGodina() +","+ p.getRok() + ","+p.getRazina(), Toast.LENGTH_LONG).show();
                 }
             });
 

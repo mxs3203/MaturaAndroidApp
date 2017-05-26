@@ -89,7 +89,8 @@
             android:layout_weight="11"
             android:textColor="#fff"
             android:background="#141F4B"
-            android:layout_marginLeft="10dp" />
+            android:layout_marginLeft="10dp"
+            android:padding="15dp" />
 
     </LinearLayout>
 

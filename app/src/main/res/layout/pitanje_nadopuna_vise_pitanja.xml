@@ -127,7 +127,8 @@
             android:id="@+id/buttonOcijeni1"
             android:layout_weight="11"
             android:textColor="#fff"
-            android:background="#141F4B" />
+            android:background="#141F4B"
+            android:padding="15dp" />
     </LinearLayout>
     <LinearLayout
         android:orientation="horizontal"
@@ -165,7 +166,8 @@
             android:id="@+id/buttonOcijeni2"
             android:layout_weight="11"
             android:textColor="#fff"
-            android:background="#141F4B" />
+            android:background="#141F4B"
+            android:padding="15dp" />
     </LinearLayout>
     <LinearLayout
         android:orientation="horizontal"
@@ -203,7 +205,8 @@
             android:id="@+id/buttonOcijeni3"
             android:layout_weight="11"
             android:textColor="#fff"
-            android:background="#141F4B"/>
+            android:background="#141F4B"
+            android:padding="15dp" />
     </LinearLayout>
     <LinearLayout
         android:orientation="horizontal"
@@ -241,7 +244,8 @@
             android:id="@+id/buttonOcijeni4"
             android:layout_weight="11"
             android:textColor="#fff"
-            android:background="#141F4B" />
+            android:background="#141F4B"
+            android:padding="15dp" />
     </LinearLayout>
 
 
