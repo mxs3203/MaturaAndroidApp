@@ -62,6 +62,7 @@
             android:ems="10"
             android:id="@+id/mojOdg"
             android:layout_marginLeft="20dp"
+            android:inputType="textNoSuggestions|textVisiblePassword"
             android:layout_marginRight="20dp"
             android:background="@drawable/empty_field"
             android:layout_marginTop="20dp"

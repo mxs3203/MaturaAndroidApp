@@ -76,7 +76,7 @@
         <EditText
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:inputType="textPersonName"
+            android:inputType="textNoSuggestions|textVisiblePassword"
             android:ems="10"
             android:id="@+id/mojOdg"
             android:layout_weight="1" />

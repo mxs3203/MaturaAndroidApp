@@ -76,7 +76,7 @@ public class IspitActivity extends Activity {
         odKudDokud = (TextView)findViewById(R.id.textViewPitanjaodKuddoKud);
         listView = (ListView) findViewById(R.id.listPovijest);
         listView.setDescendantFocusability(ViewGroup.FOCUS_BEFORE_DESCENDANTS);
-        listView.setItemsCanFocus(true);
+
 
         c = this;
 
