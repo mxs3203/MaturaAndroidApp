@@ -94,6 +94,14 @@
 
     </LinearLayout>
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textViewNapomenaTocan"
+        android:textColor="#141F4B"
+        android:layout_margin="20dp"
+        android:padding="5dp" />
+
     <Button
         android:text="@string/nastavi"
         android:layout_width="match_parent"

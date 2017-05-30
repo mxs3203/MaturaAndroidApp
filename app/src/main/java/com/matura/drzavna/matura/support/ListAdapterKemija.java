@@ -250,7 +250,8 @@ public class ListAdapterKemija  extends ArrayAdapter<KemijaPitanje> implements V
             try {
                 final MathView odgovorA = (MathView) v.findViewById(R.id.textViewOdgovorA);
                 odgovorA.setLayerType(View.LAYER_TYPE_NONE, null);
-
+                //sa ovim se moze centrirati ali ne radi bas najbolje na ostalim ponudenim odg
+                //odgovorA.loadData("<html><head><style type=\"text/css\">body{text-align:center;}</style></head><body>"+removeNewLine(p.getOdgovorA(), false)+"</b‌​ody></html>", "text/html", "utf");
                 odgovorA.setText(removeNewLine(p.getOdgovorA(), false));
                 odgovorA.setDrawingCacheEnabled(false);
                 odgovori.add(odgovorA);

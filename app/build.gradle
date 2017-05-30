@@ -24,8 +24,8 @@ android {
         applicationId "com.matura.drzvana.matura"
         minSdkVersion 19
         targetSdkVersion 25
-        versionCode 38
-        versionName "3.5.7"
+        versionCode 39
+        versionName "3.5.8"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {

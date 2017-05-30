@@ -52,6 +52,7 @@ public class ListAdapterBiologija extends ArrayAdapter<BiologijaPitanje> impleme
     String table_name,godina;
     Activity a;
     BiologijaPitanje pp;
+    TextView tocanNapomena1,tocanNapomena2,tocanNapomena3,tocanNapomena4;
 
 
     public ListAdapterBiologija(Context context, int textViewResourceId) {
@@ -187,6 +188,11 @@ public class ListAdapterBiologija extends ArrayAdapter<BiologijaPitanje> impleme
                 predaj4.setVisibility(View.VISIBLE);
                 predaj4.setOnClickListener(this);
 
+                tocanNapomena1 = (TextView)v.findViewById(R.id.textViewNapomenaTocan1);
+                tocanNapomena2 = (TextView)v.findViewById(R.id.textViewNapomenaToca2);
+                tocanNapomena3 = (TextView)v.findViewById(R.id.textViewNapomenaToca3);
+                tocanNapomena4 = (TextView)v.findViewById(R.id.textViewNapomenaTocan4);
+
             }
 
         }
@@ -314,7 +320,7 @@ public class ListAdapterBiologija extends ArrayAdapter<BiologijaPitanje> impleme
                             ikonica1.setChecked(true);
                             mojOdg1.setBackgroundColor(Color.parseColor("#4d91e3"));
                         } else {
-                            Toast.makeText(getContext(), "Točan odgovor je: " + pp.getOdgovorA(), Toast.LENGTH_LONG).show();
+                            tocanNapomena1.setText("Točan odgovor je: " + pp.getOdgovorA() + "\nNapomena: Odgovor nije dodan u statistku.");
                             mojOdg1.setBackgroundColor(Color.parseColor("#AAAAAA"));
                         }
                     }
@@ -324,7 +330,7 @@ public class ListAdapterBiologija extends ArrayAdapter<BiologijaPitanje> impleme
                         ikonica1.setChecked(true);
                         mojOdg1.setBackgroundColor(Color.parseColor("#4d91e3"));
                     } else {
-                        Toast.makeText(getContext(), "Točan odgovor je: " + pp.getOdgovorA(), Toast.LENGTH_LONG).show();
+                        tocanNapomena1.setText("Točan odgovor je: " + pp.getOdgovorA() + "\nNapomena: Odgovor nije dodan u statistku.");
                         mojOdg1.setBackgroundColor(Color.parseColor("#AAAAAA"));
                     }
                 }
@@ -340,7 +346,7 @@ public class ListAdapterBiologija extends ArrayAdapter<BiologijaPitanje> impleme
                             ikonica2.setChecked(true);
                             mojOdg2.setBackgroundColor(Color.parseColor("#4d91e3"));
                         } else {
-                            Toast.makeText(getContext(), "Točan odgovor je: " + pp.getOdgovorB(), Toast.LENGTH_LONG).show();
+                            tocanNapomena2.setText("Točan odgovor je: " + pp.getOdgovorB() + "\nNapomena: Odgovor nije dodan u statistku.");
                             mojOdg2.setBackgroundColor(Color.parseColor("#AAAAAA"));
                         }
                     }
@@ -350,7 +356,7 @@ public class ListAdapterBiologija extends ArrayAdapter<BiologijaPitanje> impleme
                         ikonica2.setChecked(true);
                         mojOdg2.setBackgroundColor(Color.parseColor("#4d91e3"));
                     } else {
-                        Toast.makeText(getContext(), "Točan odgovor je: " + pp.getOdgovorB(), Toast.LENGTH_LONG).show();
+                        tocanNapomena2.setText("Točan odgovor je: " + pp.getOdgovorB() + "\nNapomena: Odgovor nije dodan u statistku.");
                         mojOdg2.setBackgroundColor(Color.parseColor("#AAAAAA"));
                     }
                 }
@@ -366,7 +372,7 @@ public class ListAdapterBiologija extends ArrayAdapter<BiologijaPitanje> impleme
                             ikonica3.setChecked(true);
                             mojOdg3.setBackgroundColor(Color.parseColor("#4d91e3"));
                         } else {
-                            Toast.makeText(getContext(), "Točan odgovor je: " + pp.getOdgovorC(), Toast.LENGTH_LONG).show();
+                            tocanNapomena3.setText("Točan odgovor je: " + pp.getOdgovorC() + "\nNapomena: Odgovor nije dodan u statistku.");
                             mojOdg3.setBackgroundColor(Color.parseColor("#AAAAAA"));
                         }
                     }
@@ -376,7 +382,7 @@ public class ListAdapterBiologija extends ArrayAdapter<BiologijaPitanje> impleme
                         ikonica3.setChecked(true);
                         mojOdg3.setBackgroundColor(Color.parseColor("#4d91e3"));
                     } else {
-                        Toast.makeText(getContext(), "Točan odgovor je: " + pp.getOdgovorC(), Toast.LENGTH_LONG).show();
+                        tocanNapomena3.setText("Točan odgovor je: " + pp.getOdgovorC() + "\nNapomena: Odgovor nije dodan u statistku.");
                         mojOdg3.setBackgroundColor(Color.parseColor("#AAAAAA"));
                     }
                 }
@@ -392,7 +398,7 @@ public class ListAdapterBiologija extends ArrayAdapter<BiologijaPitanje> impleme
                             ikonica4.setChecked(true);
                             mojOdg4.setBackgroundColor(Color.parseColor("#4d91e3"));
                         } else {
-                            Toast.makeText(getContext(), "Točan odgovor je: " + pp.getOdgovorD(), Toast.LENGTH_LONG).show();
+                            tocanNapomena4.setText("Točan odgovor je: " + pp.getOdgovorD() + "\nNapomena: Odgovor nije dodan u statistku.");
                             mojOdg4.setBackgroundColor(Color.parseColor("#AAAAAA"));
                         }
                     }
@@ -402,7 +408,7 @@ public class ListAdapterBiologija extends ArrayAdapter<BiologijaPitanje> impleme
                         ikonica4.setChecked(true);
                         mojOdg4.setBackgroundColor(Color.parseColor("#4d91e3"));
                     } else {
-                        Toast.makeText(getContext(), "Točan odgovor je: " + pp.getOdgovorD(), Toast.LENGTH_LONG).show();
+                        tocanNapomena4.setText("Točan odgovor je: " + pp.getOdgovorD() + "\nNapomena: Odgovor nije dodan u statistku.");
                         mojOdg4.setBackgroundColor(Color.parseColor("#AAAAAA"));
                     }
                 }

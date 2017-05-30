@@ -81,6 +81,7 @@ public class ListAdapterSociologija extends ArrayAdapter<SocioloijaPitanje> impl
                 v = vi.inflate(R.layout.pitanje_nadopuna, null);
                 vrsta_pitanja = 2;
                 mojOdg = (EditText)v.findViewById(R.id.mojOdg);
+                final TextView tocanNapomena = (TextView)v.findViewById(R.id.textViewNapomenaTocan);
                 final CheckBox ikonica = (CheckBox) v.findViewById(R.id.checkBoxTocno);
                 ikonica.setClickable(false);
                 predaj = (Button)v.findViewById(R.id.buttonOcijeni);
@@ -97,7 +98,7 @@ public class ListAdapterSociologija extends ArrayAdapter<SocioloijaPitanje> impl
                                         ikonica.setChecked(true);
                                         mojOdg.setBackgroundColor(Color.parseColor("#4d91e3"));
                                     } else {
-                                        Toast.makeText(getContext(), "Točan odgovor je: " + p.getTocan(), Toast.LENGTH_LONG).show();
+                                        tocanNapomena.setText("Točan odgovor je: " + p.getTocan() + "\nNapomena: Odgovor nije dodan u statistku.");
                                         mojOdg.setBackgroundColor(Color.parseColor("#AAAAAA"));
                                     }
                                 }
@@ -107,7 +108,7 @@ public class ListAdapterSociologija extends ArrayAdapter<SocioloijaPitanje> impl
                                     ikonica.setChecked(true);
                                     mojOdg.setBackgroundColor(Color.parseColor("#4d91e3"));
                                 } else {
-                                    Toast.makeText(getContext(), "Točan odgovor je: " + p.getTocan(), Toast.LENGTH_LONG).show();
+                                    tocanNapomena.setText("Točan odgovor je: " + p.getTocan() + "\nNapomena: Odgovor nije dodan u statistku.");
                                     mojOdg.setBackgroundColor(Color.parseColor("#AAAAAA"));
                                 }
                             }

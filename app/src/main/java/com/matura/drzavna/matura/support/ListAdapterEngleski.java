@@ -86,6 +86,7 @@ public class ListAdapterEngleski extends ArrayAdapter<EngleskiPitanje> implement
                 final CheckBox ikonica = (CheckBox) v.findViewById(R.id.checkBoxTocno);
                 ikonica.setClickable(false);
                 mojOdg = (EditText)v.findViewById(R.id.mojOdg);
+                final TextView tocanNapomena = (TextView)v.findViewById(R.id.textViewNapomenaTocan);
                 predaj = (Button)v.findViewById(R.id.buttonOcijeni);
                 predaj.setVisibility(View.VISIBLE);
                try {
@@ -101,7 +102,7 @@ public class ListAdapterEngleski extends ArrayAdapter<EngleskiPitanje> implement
                                            ikonica.setChecked(true);
                                            mojOdg.setBackgroundColor(Color.parseColor("#4d91e3"));
                                        } else {
-                                           Toast.makeText(getContext(), "Točan odgovor je: " + p.getTocan(), Toast.LENGTH_LONG).show();
+                                           tocanNapomena.setText("Točan odgovor je: " + p.getTocan() + "\nNapomena: Odgovor nije dodan u statistku.");
                                            mojOdg.setBackgroundColor(Color.parseColor("#AAAAAA"));
                                        }
                                    }
@@ -111,7 +112,7 @@ public class ListAdapterEngleski extends ArrayAdapter<EngleskiPitanje> implement
                                        mojOdg.setBackgroundColor(Color.parseColor("#4d91e3"));
                                    } else {
 
-                                       Toast.makeText(getContext(), "Točan odgovor je: " + p.getTocan(), Toast.LENGTH_LONG).show();
+                                       tocanNapomena.setText("Točan odgovor je: " + p.getTocan() + "\nNapomena: Odgovor nije dodan u statistku.");
                                        mojOdg.setBackgroundColor(Color.parseColor("#AAAAAA"));
                                    }
                                }

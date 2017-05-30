@@ -82,6 +82,7 @@ public class ListAdapterPIG extends ArrayAdapter<Pig_Pitanja> implements View.On
             else if(p.getOdgovorA() == null || p.getOdgovorC() == null || p.getOdgovorB() == null) {
                 v = vi.inflate(R.layout.pitanje_nadopuna, null);
                 vrsta_pitanja = 2;
+                final TextView tocanNapomena = (TextView)v.findViewById(R.id.textViewNapomenaTocan);
                 mojOdg = (EditText)v.findViewById(R.id.mojOdg);
                 predaj = (Button)v.findViewById(R.id.buttonOcijeni);
                 predaj.setVisibility(View.VISIBLE);
@@ -96,7 +97,7 @@ public class ListAdapterPIG extends ArrayAdapter<Pig_Pitanja> implements View.On
                                     if (sss.equalsIgnoreCase(mojOdg.getText().toString().trim())) {
                                         mojOdg.setBackgroundColor(Color.parseColor("#141F4B"));
                                     } else {
-                                        Toast.makeText(getContext(), "Točan odgovor je: " + p.getTocno(), Toast.LENGTH_LONG).show();
+                                        tocanNapomena.setText("Točan odgovor je: " + p.getTocno() + "\nNapomena: Odgovor nije dodan u statistku.");
                                         mojOdg.setBackgroundColor(Color.parseColor("#AAAAAA"));
                                     }
                                 }
@@ -105,7 +106,7 @@ public class ListAdapterPIG extends ArrayAdapter<Pig_Pitanja> implements View.On
                                 if (mojOdg.getText().toString().equalsIgnoreCase(p.getTocno())) {
                                     mojOdg.setBackgroundColor(Color.parseColor("#141F4B"));
                                 } else {
-                                    Toast.makeText(getContext(), "Točan odgovor je: " + p.getTocno(), Toast.LENGTH_LONG).show();
+                                    tocanNapomena.setText("Točan odgovor je: " + p.getTocno() + "\nNapomena: Odgovor nije dodan u statistku.");
                                     mojOdg.setBackgroundColor(Color.parseColor("#AAAAAA"));
                                 }
                             }

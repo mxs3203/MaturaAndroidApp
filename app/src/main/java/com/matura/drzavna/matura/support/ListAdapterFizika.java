@@ -94,6 +94,7 @@ public class ListAdapterFizika extends ArrayAdapter<FizikaPitanje> implements Vi
                 v = vi.inflate(R.layout.matematika_nadopuna_pitanje, null);
                 mojOdg = (EditText)v.findViewById(R.id.mojOdg);
                 final CheckBox ikonica = (CheckBox) v.findViewById(R.id.checkBoxTocno);
+                final TextView tocanNapomena = (TextView)v.findViewById(R.id.textViewNapomenaTocan);
                 ikonica.setClickable(false);
                 predaj = (Button)v.findViewById(R.id.buttonOcijeni);
                 predaj.setVisibility(View.VISIBLE);
@@ -109,7 +110,7 @@ public class ListAdapterFizika extends ArrayAdapter<FizikaPitanje> implements Vi
                                         ikonica.setChecked(true);
                                         mojOdg.setBackgroundColor(Color.parseColor("#4d91e3"));
                                     } else {
-                                        Toast.makeText(getContext(), "Točan odgovor je: " + p.getTocan(), Toast.LENGTH_LONG).show();
+                                        tocanNapomena.setText("Točan odgovor je: " + p.getTocan() + "\nNapomena: Odgovor nije dodan u statistku.");
                                         mojOdg.setBackgroundColor(Color.parseColor("#AAAAAA"));
                                     }
                                 }
@@ -119,7 +120,7 @@ public class ListAdapterFizika extends ArrayAdapter<FizikaPitanje> implements Vi
                                     ikonica.setChecked(true);
                                     mojOdg.setBackgroundColor(Color.parseColor("#4d91e3"));
                                 } else {
-                                    Toast.makeText(getContext(), "Točan odgovor je: " + p.getTocan(), Toast.LENGTH_LONG).show();
+                                    tocanNapomena.setText("Točan odgovor je: " + p.getTocan() + "\nNapomena: Odgovor nije dodan u statistku.");
                                     mojOdg.setBackgroundColor(Color.parseColor("#AAAAAA"));
                                 }
                             }

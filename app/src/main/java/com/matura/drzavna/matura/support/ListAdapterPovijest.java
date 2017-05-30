@@ -76,6 +76,7 @@ public class ListAdapterPovijest extends ArrayAdapter<PovijestPitanja> implement
                 vrsta_pitanja = 2;
                 mojOdg = (EditText)v.findViewById(R.id.mojOdg);
                 predaj = (Button)v.findViewById(R.id.buttonOcijeni);
+                final TextView tocanNapomena = (TextView)v.findViewById(R.id.textViewNapomenaTocan);
                 final CheckBox ikonica = (CheckBox) v.findViewById(R.id.checkBoxTocno);
                 ikonica.setClickable(false);
                 predaj.setVisibility(View.VISIBLE);
@@ -91,7 +92,7 @@ public class ListAdapterPovijest extends ArrayAdapter<PovijestPitanja> implement
                                         ikonica.setChecked(true);
                                         mojOdg.setBackgroundColor(Color.parseColor("#4d91e3"));
                                     } else {
-                                        Toast.makeText(getContext(), "Točan odgovor je: " + p.getTocan(), Toast.LENGTH_LONG).show();
+                                        tocanNapomena.setText("Točan odgovor je: " + p.getTocan() + "\nNapomena: Odgovor nije dodan u statistku.");
                                         mojOdg.setBackgroundColor(Color.parseColor("#AAAAAA"));
                                     }
                                 }
@@ -101,7 +102,7 @@ public class ListAdapterPovijest extends ArrayAdapter<PovijestPitanja> implement
                                     ikonica.setChecked(true);
                                     mojOdg.setBackgroundColor(Color.parseColor("#4d91e3"));
                                 } else {
-                                    Toast.makeText(getContext(), "Točan odgovor je: " + p.getTocan(), Toast.LENGTH_LONG).show();
+                                    tocanNapomena.setText("Točan odgovor je: " + p.getTocan() + "\nNapomena: Odgovor nije dodan u statistku.");
                                     mojOdg.setBackgroundColor(Color.parseColor("#AAAAAA"));
                                 }
                             }
