@@ -20,11 +20,13 @@ import com.matura.drzavna.matura.models.BiologijaPitanje;
 import com.matura.drzavna.matura.models.EngleskiPitanje;
 import com.matura.drzavna.matura.models.FizikaPitanje;
 import com.matura.drzavna.matura.models.GramatikaPitanje;
+import com.matura.drzavna.matura.models.InformatikaPitanje;
 import com.matura.drzavna.matura.models.KemijaPitanje;
 import com.matura.drzavna.matura.models.KnjizevnostPitanja;
 import com.matura.drzavna.matura.models.KnjizevnostTekst;
 import com.matura.drzavna.matura.models.LikovniPitanje;
 import com.matura.drzavna.matura.models.MatematikaPitanje;
+import com.matura.drzavna.matura.models.NjemackiPitanje;
 import com.matura.drzavna.matura.models.Pig_Pitanja;
 import com.matura.drzavna.matura.models.PovijestPitanja;
 import com.matura.drzavna.matura.models.PsihologijaPitanje;
@@ -35,11 +37,13 @@ import com.matura.drzavna.matura.support.ListAdapterBiologija;
 import com.matura.drzavna.matura.support.ListAdapterEngleski;
 import com.matura.drzavna.matura.support.ListAdapterFizika;
 import com.matura.drzavna.matura.support.ListAdapterGramatikaPitanja;
+import com.matura.drzavna.matura.support.ListAdapterInformatika;
 import com.matura.drzavna.matura.support.ListAdapterKemija;
 import com.matura.drzavna.matura.support.ListAdapterKnjizevnostPitanja;
 import com.matura.drzavna.matura.support.ListAdapterKnjizevnostTekst;
 import com.matura.drzavna.matura.support.ListAdapterLikovni;
 import com.matura.drzavna.matura.support.ListAdapterMatematika;
+import com.matura.drzavna.matura.support.ListAdapterNjemacki;
 import com.matura.drzavna.matura.support.ListAdapterPIG;
 import com.matura.drzavna.matura.support.ListAdapterPovijest;
 import com.matura.drzavna.matura.support.ListAdapterPsihologija;
@@ -344,6 +348,44 @@ public class IspitActivity extends Activity {
             if (end < ispiti.size()) {
                 List<LikovniPitanje> prvih_pet = ispiti.subList(start, end);
                 ListAdapterLikovni customAdapter = new ListAdapterLikovni(this, R.layout.activity_ispit, prvih_pet, start, end, table_name, godina,this);
+                listView.setAdapter(customAdapter);
+            } else {
+                Intent is = new Intent(c, StatistikaActivity.class);
+                finish();
+                is.putExtra("predmet", DatabaseHelper.mapTableNameToPresentationValue(table_name));
+                is.putExtra("godina", godina);
+                is.putExtra("razina", razina);
+                is.putExtra("size", ispiti.size());
+                startActivity(is);
+            }
+        }
+        else if(table_name.equalsIgnoreCase("njemacki_pitanja")) {
+
+            RealmResults<NjemackiPitanje> ispiti = realm.where(NjemackiPitanje.class).beginGroup().equalTo("godina", godina).equalTo("razina", "osnovna").equalTo("rok",rok).endGroup().findAll();
+            ispitSize = ispiti.size();
+            System.out.println("-------------------Njemacki : Razina :" + razina + "  Godina: " + godina + "  ROK:" + rok +"   Size iz baze:" + ispiti.size());
+            if (end < ispiti.size()) {
+                List<NjemackiPitanje> prvih_pet = ispiti.subList(start, end);
+                ListAdapterNjemacki customAdapter = new ListAdapterNjemacki(this, R.layout.activity_ispit, prvih_pet, start, end, table_name, godina,this);
+                listView.setAdapter(customAdapter);
+            } else {
+                Intent is = new Intent(c, StatistikaActivity.class);
+                finish();
+                is.putExtra("predmet", DatabaseHelper.mapTableNameToPresentationValue(table_name));
+                is.putExtra("godina", godina);
+                is.putExtra("razina", razina);
+                is.putExtra("size", ispiti.size());
+                startActivity(is);
+            }
+        }
+        else if(table_name.equalsIgnoreCase("informatika_pitanja")) {
+
+            RealmResults<InformatikaPitanje> ispiti = realm.where(InformatikaPitanje.class).beginGroup().equalTo("godina", godina).equalTo("rok",rok).endGroup().findAll();
+            ispitSize = ispiti.size();
+            System.out.println("-------------------Njemacki : Razina :" + razina + "  Godina: " + godina + "  ROK:" + rok +"   Size iz baze:" + ispiti.size());
+            if (end < ispiti.size()) {
+                List<InformatikaPitanje> prvih_pet = ispiti.subList(start, end);
+                ListAdapterInformatika customAdapter = new ListAdapterInformatika(this, R.layout.activity_ispit, prvih_pet, start, end, table_name, godina,this);
                 listView.setAdapter(customAdapter);
             } else {
                 Intent is = new Intent(c, StatistikaActivity.class);

@@ -13,27 +13,21 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.matura.drzavna.matura.DrzavnaMaturaMainMenu;
 import com.matura.drzavna.matura.R;
 import com.matura.drzavna.matura.ispit_controllers.IspitActivity;
 import com.matura.drzavna.matura.models.EngleskiPitanje;
-import com.matura.drzavna.matura.models.KnjizevnostTekst;
+import com.matura.drzavna.matura.models.NjemackiPitanje;
 import com.matura.drzavna.matura.models.Statistika;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
 
 import io.realm.Realm;
 
-/**
- * Created by mateosokac on 4/15/17.
- */
-
-public class ListAdapterEngleski extends ArrayAdapter<EngleskiPitanje> implements View.OnClickListener {
-    List<EngleskiPitanje> items;
+public class ListAdapterNjemacki extends ArrayAdapter<NjemackiPitanje> implements View.OnClickListener {
+    List<NjemackiPitanje> items;
     Button nastavi, predaj;
     int start, end;
     Realm realm;
@@ -42,11 +36,11 @@ public class ListAdapterEngleski extends ArrayAdapter<EngleskiPitanje> implement
     Activity a;
 
 
-    public ListAdapterEngleski(Context context, int textViewResourceId) {
+    public ListAdapterNjemacki(Context context, int textViewResourceId) {
         super(context, textViewResourceId);
     }
 
-    public ListAdapterEngleski(Context context, int resource, List<EngleskiPitanje> items, int start, int end, String table_name, String godina, Activity a) {
+    public ListAdapterNjemacki(Context context, int resource, List<NjemackiPitanje> items, int start, int end, String table_name, String godina, Activity a) {
         super(context, resource);
         this.items = items;
         this.start = start;
@@ -64,7 +58,7 @@ public class ListAdapterEngleski extends ArrayAdapter<EngleskiPitanje> implement
 
         View v = convertView;
         int vrsta_pitanja = 0;
-        final EngleskiPitanje p = items.get(position);
+        final NjemackiPitanje p = items.get(position);
 
 
         if (v == null) {
@@ -89,41 +83,41 @@ public class ListAdapterEngleski extends ArrayAdapter<EngleskiPitanje> implement
                 final TextView tocanNapomena = (TextView)v.findViewById(R.id.textViewNapomenaTocan);
                 predaj = (Button)v.findViewById(R.id.buttonOcijeni);
                 predaj.setVisibility(View.VISIBLE);
-               try {
-                   predaj.setOnClickListener(new View.OnClickListener() {
-                       @Override
-                       public void onClick(View view) {
-                           if (!mojOdg.getText().toString().equalsIgnoreCase("")) {
-                               if (p.getTocan().contains(",")) {
-                                   String[] parts = p.getTocan().split(",");
-                                   for (String s : parts) {
-                                       String sss = s.trim();
-                                       if (sss.equalsIgnoreCase(mojOdg.getText().toString().trim())) {
-                                           ikonica.setChecked(true);
-                                           mojOdg.setBackgroundColor(Color.parseColor("#4d91e3"));
-                                       } else {
-                                           tocanNapomena.setText("Točan odgovor je: " + p.getTocan() + "\nNapomena: Odgovor nije dodan u statistku.");
-                                           mojOdg.setBackgroundColor(Color.parseColor("#AAAAAA"));
-                                       }
-                                   }
-                               } else {
-                                   if (mojOdg.getText().toString().equalsIgnoreCase(p.getTocan())) {
-                                       ikonica.setChecked(true);
-                                       mojOdg.setBackgroundColor(Color.parseColor("#4d91e3"));
-                                   } else {
+                try {
+                    predaj.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            if (!mojOdg.getText().toString().equalsIgnoreCase("")) {
+                                if (p.getTocan().contains(",")) {
+                                    String[] parts = p.getTocan().split(",");
+                                    for (String s : parts) {
+                                        String sss = s.trim();
+                                        if (sss.equalsIgnoreCase(mojOdg.getText().toString().trim())) {
+                                            ikonica.setChecked(true);
+                                            mojOdg.setBackgroundColor(Color.parseColor("#4d91e3"));
+                                        } else {
+                                            tocanNapomena.setText("Točan odgovor je: " + p.getTocan() + "\nNapomena: Odgovor nije dodan u statistku.");
+                                            mojOdg.setBackgroundColor(Color.parseColor("#AAAAAA"));
+                                        }
+                                    }
+                                } else {
+                                    if (mojOdg.getText().toString().equalsIgnoreCase(p.getTocan())) {
+                                        ikonica.setChecked(true);
+                                        mojOdg.setBackgroundColor(Color.parseColor("#4d91e3"));
+                                    } else {
 
-                                       tocanNapomena.setText("Točan odgovor je: " + p.getTocan() + "\nNapomena: Odgovor nije dodan u statistku.");
-                                       mojOdg.setBackgroundColor(Color.parseColor("#AAAAAA"));
-                                   }
-                               }
-                           }
+                                        tocanNapomena.setText("Točan odgovor je: " + p.getTocan() + "\nNapomena: Odgovor nije dodan u statistku.");
+                                        mojOdg.setBackgroundColor(Color.parseColor("#AAAAAA"));
+                                    }
+                                }
+                            }
 
-                       }
-                   });
-               }catch (Exception e )
-               {
-                   e.printStackTrace();
-               }
+                        }
+                    });
+                }catch (Exception e )
+                {
+                    e.printStackTrace();
+                }
                 vrsta_pitanja = 3;
             }
             else if (p.getVrsta_pitanja() == 4) {
@@ -186,7 +180,7 @@ public class ListAdapterEngleski extends ArrayAdapter<EngleskiPitanje> implement
                 if(vrsta_pitanja == 1)
                 {
                     pitanje.setText(p.getPitanje());
-                    String pitanje_t = p.getPitanje().trim();
+                    String pitanje_t = p.getPitanje();
                     koja_praznina.setTextColor(Color.BLACK);
                     koja_praznina.setText("Nadopuna " + pitanje_t.substring(p.getPitanje().length() - 5, pitanje_t.length()));
                 }
@@ -233,12 +227,12 @@ public class ListAdapterEngleski extends ArrayAdapter<EngleskiPitanje> implement
 
     @Nullable
     @Override
-    public EngleskiPitanje getItem(int position) {
+    public NjemackiPitanje getItem(int position) {
         return items.get(position);
     }
 
     @Override
-    public int getPosition(EngleskiPitanje item) {
+    public int getPosition(NjemackiPitanje item) {
         return super.getPosition(item);
     }
 
@@ -247,7 +241,7 @@ public class ListAdapterEngleski extends ArrayAdapter<EngleskiPitanje> implement
         view.setBackgroundResource(R.drawable.odgovor_border);
     }
 
-    public void setupABCD(final EngleskiPitanje p, View v, final int position) {
+    public void setupABCD(final NjemackiPitanje p, View v, final int position) {
         final ArrayList<TextView> odgovori = new ArrayList<TextView>();
 
         if (p.getOdgovorA() != null && p.getOdgovorB() != null && p.getOdgovorC() != null) {

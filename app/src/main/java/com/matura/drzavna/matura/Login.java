@@ -99,6 +99,10 @@ public class Login extends Activity {
                         } catch (TimeoutException e) {
                             e.printStackTrace();
                         }
+                        catch(Exception e)
+                        {
+                            e.printStackTrace();
+                        }
                     }
                 });
                 Bundle parameters = new Bundle();
@@ -195,6 +199,10 @@ public class Login extends Activity {
             e.printStackTrace();
             prijava.setClickable(true);
             Toast.makeText(c, "Error", Toast.LENGTH_SHORT).show();
+        }
+        catch(Exception e)
+        {
+            e.printStackTrace();
         }
 
         prijava.setBackgroundResource(R.drawable.gray_button);

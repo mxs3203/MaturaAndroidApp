@@ -16,6 +16,7 @@ import com.facebook.FacebookCallback;
 import com.facebook.FacebookException;
 import com.facebook.FacebookSdk;
 import com.facebook.Profile;
+import com.facebook.login.LoginManager;
 import com.facebook.login.LoginResult;
 import com.facebook.login.widget.LoginButton;
 import com.google.gson.Gson;
@@ -60,6 +61,12 @@ public class RegisterForm extends Activity {
         realm = DatabaseHelper.resetRealm();
 
         fb = (LoginButton) findViewById(R.id.login_button);
+
+        user_name = (EditText)findViewById(R.id.editTextIme);
+        password = (EditText)findViewById(R.id.editTextZaporka);
+        email = (EditText)findViewById(R.id.editTextemail);
+        prijava = (Button) findViewById(R.id.buttonRegistrirajSe);
+
         List<String> permissionNeeds = Arrays.asList("email", "public_profile");
         fb.setReadPermissions(permissionNeeds);
         fb.registerCallback(callbackManager, new FacebookCallback<LoginResult>() {
@@ -68,11 +75,9 @@ public class RegisterForm extends Activity {
                 try {
                     AccessToken accessToken = loginResult.getAccessToken();
                     final Profile profile = Profile.getCurrentProfile();
-
                     Gson gson = new GsonBuilder().setLenient().create();
                     Upload u = new Upload();
                     final User me = new User(profile.getName(), "facebook", "facebook",  "", profile.getId(), true, "Android");
-                    System.out.println(gson.toJson(me));
                     final JSONObject response = new JSONObject(u.execute(gson.toJson(me)).get(10000, TimeUnit.MILLISECONDS).trim());
                     if (response.getInt("status") == 200) {
                         Toast.makeText(c, "Successfully Registered", Toast.LENGTH_LONG).show();
@@ -107,6 +112,11 @@ public class RegisterForm extends Activity {
                 } catch (TimeoutException e) {
                     e.printStackTrace();
                 }
+                catch(Exception e)
+                {
+                    e.printStackTrace();
+                    LoginManager.getInstance().logOut();
+                }
             }
 
             @Override
@@ -117,16 +127,13 @@ public class RegisterForm extends Activity {
             @Override
             public void onError(FacebookException e) {
                 Toast.makeText(c, "Error", Toast.LENGTH_SHORT).show();
+                LoginManager.getInstance().logOut();
             }
         });
 
 
 
 
-        user_name = (EditText)findViewById(R.id.editTextIme);
-        password = (EditText)findViewById(R.id.editTextZaporka);
-        email = (EditText)findViewById(R.id.editTextemail);
-        prijava = (Button) findViewById(R.id.buttonRegistrirajSe);
         prijava.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -179,9 +186,11 @@ public class RegisterForm extends Activity {
                 } catch (TimeoutException e) {
                     e.printStackTrace();
                 }
-
-                prijava.setBackgroundResource(R.drawable.gray_button);
-                prijava.setTextColor(Color.DKGRAY);
+                catch(Exception e)
+                {
+                    LoginManager.getInstance().logOut();
+                    e.printStackTrace();
+                }
 
             }
         });

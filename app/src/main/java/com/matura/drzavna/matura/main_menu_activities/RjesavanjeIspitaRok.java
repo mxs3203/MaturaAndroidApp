@@ -19,10 +19,12 @@ import com.matura.drzavna.matura.ispit_controllers.IspitActivity;
 import com.matura.drzavna.matura.models.BiologijaPitanje;
 import com.matura.drzavna.matura.models.EngleskiPitanje;
 import com.matura.drzavna.matura.models.FizikaPitanje;
+import com.matura.drzavna.matura.models.InformatikaPitanje;
 import com.matura.drzavna.matura.models.Ispit;
 import com.matura.drzavna.matura.models.KemijaPitanje;
 import com.matura.drzavna.matura.models.KnjizevnostPitanja;
 import com.matura.drzavna.matura.models.MatematikaPitanje;
+import com.matura.drzavna.matura.models.NjemackiPitanje;
 import com.matura.drzavna.matura.models.Pig_Pitanja;
 import com.matura.drzavna.matura.models.PovijestPitanja;
 import com.matura.drzavna.matura.models.SocioloijaPitanje;
@@ -182,6 +184,20 @@ public class RjesavanjeIspitaRok extends Activity {
         else if(name.equalsIgnoreCase("likovni_pitanja")) {
             RealmResults<EngleskiPitanje> pig = realm.where(EngleskiPitanje.class).findAll();
             for(EngleskiPitanje p : pig){
+                if(!godine.contains(DatabaseHelper.mapRokToPresentationvalue(p.getRok())) && p.getRok() != null && !p.getRok().equalsIgnoreCase(""))
+                    godine.add(DatabaseHelper.mapRokToPresentationvalue(p.getRok()));
+            }
+        }
+        else if(name.equalsIgnoreCase("njemacki_pitanja")) {
+            RealmResults<NjemackiPitanje> pig = realm.where(NjemackiPitanje.class).findAll();
+            for(NjemackiPitanje p : pig){
+                if(!godine.contains(DatabaseHelper.mapRokToPresentationvalue(p.getRok())) && p.getRok() != null && !p.getRok().equalsIgnoreCase(""))
+                    godine.add(DatabaseHelper.mapRokToPresentationvalue(p.getRok()));
+            }
+        }
+        else if(name.equalsIgnoreCase("informatika_pitanja")) {
+            RealmResults<InformatikaPitanje> pig = realm.where(InformatikaPitanje.class).findAll();
+            for(InformatikaPitanje p : pig){
                 if(!godine.contains(DatabaseHelper.mapRokToPresentationvalue(p.getRok())) && p.getRok() != null && !p.getRok().equalsIgnoreCase(""))
                     godine.add(DatabaseHelper.mapRokToPresentationvalue(p.getRok()));
             }
