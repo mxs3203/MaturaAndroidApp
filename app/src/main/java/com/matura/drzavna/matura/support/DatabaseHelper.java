@@ -26,6 +26,7 @@ import com.matura.drzavna.matura.models.lists.SvaKnjizevnostText;
 import com.matura.drzavna.matura.models.lists.SvaMatematikaPitanja;
 import com.matura.drzavna.matura.models.lists.SvaPitanjaEngleski;
 import com.matura.drzavna.matura.models.lists.SvaPitanjaFizika;
+import com.matura.drzavna.matura.models.lists.SvaPitanjaGeografija;
 import com.matura.drzavna.matura.models.lists.SvaPitanjaInformatika;
 import com.matura.drzavna.matura.models.lists.SvaPitanjaKemija;
 import com.matura.drzavna.matura.models.lists.SvaPitanjaKnjizevnost;
@@ -113,6 +114,8 @@ public class DatabaseHelper {
             return SvaPitanjaNjemacki.class;
         else if(ispit.equalsIgnoreCase("informatika_pitanja"))
             return SvaPitanjaInformatika.class;
+        else if(ispit.equalsIgnoreCase("geografija_pitanja"))
+            return SvaPitanjaGeografija.class;
         return  null;
     }
     public static Object getObjectsForJsonMapping(String ispit)
@@ -151,6 +154,8 @@ public class DatabaseHelper {
             return new SvaPitanjaNjemacki();
         else if(ispit.equalsIgnoreCase("informatika_pitanja"))
             return new SvaPitanjaInformatika();
+        else if(ispit.equalsIgnoreCase("geografija_pitanja"))
+            return new SvaPitanjaGeografija();
         return  null;
     }
 
@@ -221,6 +226,8 @@ public class DatabaseHelper {
             return "Njemački";
         else if(tablename.equalsIgnoreCase("informatika_pitanja"))
             return "Informatika";
+        else if(tablename.equalsIgnoreCase("geografija_pitanja"))
+            return "Geografija";
         return  "";
     }
     public static String mapListViewValuesToTableName(String value)
@@ -251,6 +258,8 @@ public class DatabaseHelper {
             return "njemacki_pitanja";
         else if(value.equalsIgnoreCase("Informatika"))
             return "informatika_pitanja";
+        else if(value.equalsIgnoreCase("Geografija"))
+            return "geografija_pitanja";
         return  "";
     }
 

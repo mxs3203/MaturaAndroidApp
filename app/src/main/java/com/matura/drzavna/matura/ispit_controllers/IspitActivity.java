@@ -19,6 +19,7 @@ import com.matura.drzavna.matura.StatistikaActivity;
 import com.matura.drzavna.matura.models.BiologijaPitanje;
 import com.matura.drzavna.matura.models.EngleskiPitanje;
 import com.matura.drzavna.matura.models.FizikaPitanje;
+import com.matura.drzavna.matura.models.GeografijaPitanje;
 import com.matura.drzavna.matura.models.GramatikaPitanje;
 import com.matura.drzavna.matura.models.InformatikaPitanje;
 import com.matura.drzavna.matura.models.KemijaPitanje;
@@ -36,6 +37,7 @@ import com.matura.drzavna.matura.support.DatabaseHelper;
 import com.matura.drzavna.matura.support.ListAdapterBiologija;
 import com.matura.drzavna.matura.support.ListAdapterEngleski;
 import com.matura.drzavna.matura.support.ListAdapterFizika;
+import com.matura.drzavna.matura.support.ListAdapterGeografija;
 import com.matura.drzavna.matura.support.ListAdapterGramatikaPitanja;
 import com.matura.drzavna.matura.support.ListAdapterInformatika;
 import com.matura.drzavna.matura.support.ListAdapterKemija;
@@ -326,7 +328,7 @@ public class IspitActivity extends Activity {
         else if(table_name.equalsIgnoreCase("psihologija_pitanja")) {
             RealmResults<PsihologijaPitanje> ispiti = realm.where(PsihologijaPitanje.class).beginGroup().equalTo("godina", godina).equalTo("razina", razina).equalTo("rok",rok).endGroup().findAll();
             ispitSize = ispiti.size();
-            System.out.println("ENGLESKI : Razina :" + razina + "Godina: " + godina + "Size iz baze:" + ispiti.size());
+            System.out.println("Psih : Razina :" + razina + "Godina: " + godina + "Size iz baze:" + ispiti.size());
             if (end < ispiti.size()) {
                 List<PsihologijaPitanje> prvih_pet = ispiti.subList(start, end);
                 ListAdapterPsihologija customAdapter = new ListAdapterPsihologija(this, R.layout.activity_ispit, prvih_pet, start, end, table_name, godina,this);
@@ -344,7 +346,7 @@ public class IspitActivity extends Activity {
         else if(table_name.equalsIgnoreCase("likovni_pitanja")) {
             RealmResults<LikovniPitanje> ispiti = realm.where(LikovniPitanje.class).beginGroup().equalTo("godina", godina).equalTo("razina", razina).equalTo("rok",rok).endGroup().findAll();
             ispitSize = ispiti.size();
-            System.out.println("ENGLESKI : Razina :" + razina + "Godina: " + godina + "Size iz baze:" + ispiti.size());
+            System.out.println("Likovni : Razina :" + razina + "Godina: " + godina + "Size iz baze:" + ispiti.size());
             if (end < ispiti.size()) {
                 List<LikovniPitanje> prvih_pet = ispiti.subList(start, end);
                 ListAdapterLikovni customAdapter = new ListAdapterLikovni(this, R.layout.activity_ispit, prvih_pet, start, end, table_name, godina,this);
@@ -382,10 +384,29 @@ public class IspitActivity extends Activity {
 
             RealmResults<InformatikaPitanje> ispiti = realm.where(InformatikaPitanje.class).beginGroup().equalTo("godina", godina).equalTo("rok",rok).endGroup().findAll();
             ispitSize = ispiti.size();
-            System.out.println("-------------------Njemacki : Razina :" + razina + "  Godina: " + godina + "  ROK:" + rok +"   Size iz baze:" + ispiti.size());
+            System.out.println("-------------------INF : Razina :" + razina + "  Godina: " + godina + "  ROK:" + rok +"   Size iz baze:" + ispiti.size());
             if (end < ispiti.size()) {
                 List<InformatikaPitanje> prvih_pet = ispiti.subList(start, end);
                 ListAdapterInformatika customAdapter = new ListAdapterInformatika(this, R.layout.activity_ispit, prvih_pet, start, end, table_name, godina,this);
+                listView.setAdapter(customAdapter);
+            } else {
+                Intent is = new Intent(c, StatistikaActivity.class);
+                finish();
+                is.putExtra("predmet", DatabaseHelper.mapTableNameToPresentationValue(table_name));
+                is.putExtra("godina", godina);
+                is.putExtra("razina", razina);
+                is.putExtra("size", ispiti.size());
+                startActivity(is);
+            }
+        }
+        else if(table_name.equalsIgnoreCase("geografija_pitanja")) {
+
+            RealmResults<GeografijaPitanje> ispiti = realm.where(GeografijaPitanje.class).beginGroup().equalTo("godina", godina).equalTo("rok",rok).endGroup().findAll();
+            ispitSize = ispiti.size();
+            System.out.println("-------------------GEO : Razina :" + razina + "  Godina: " + godina + "  ROK:" + rok +"   Size iz baze:" + ispiti.size());
+            if (end < ispiti.size()) {
+                List<GeografijaPitanje> prvih_pet = ispiti.subList(start, end);
+                ListAdapterGeografija customAdapter = new ListAdapterGeografija(this, R.layout.activity_ispit, prvih_pet, start, end, table_name, godina,this);
                 listView.setAdapter(customAdapter);
             } else {
                 Intent is = new Intent(c, StatistikaActivity.class);

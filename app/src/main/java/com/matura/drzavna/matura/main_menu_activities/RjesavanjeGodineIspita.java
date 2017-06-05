@@ -18,6 +18,7 @@ import com.matura.drzavna.matura.R;
 import com.matura.drzavna.matura.models.BiologijaPitanje;
 import com.matura.drzavna.matura.models.EngleskiPitanje;
 import com.matura.drzavna.matura.models.FizikaPitanje;
+import com.matura.drzavna.matura.models.GeografijaPitanje;
 import com.matura.drzavna.matura.models.InformatikaPitanje;
 import com.matura.drzavna.matura.models.Ispit;
 import com.matura.drzavna.matura.models.KemijaPitanje;
@@ -177,6 +178,14 @@ public class RjesavanjeGodineIspita extends Activity {
                     godine.add(p.getGodina());
             }
         }
+        else if(name.equalsIgnoreCase("geografija_pitanja")) {
+            RealmResults<GeografijaPitanje> pig = realm.where(GeografijaPitanje.class).findAll();
+            for(GeografijaPitanje p : pig){
+                if(!godine.contains(p.getGodina()) && p.getGodina() != null && !p.getGodina().equalsIgnoreCase(""))
+                    godine.add(p.getGodina());
+            }
+        }
+
 
 
         return godine;

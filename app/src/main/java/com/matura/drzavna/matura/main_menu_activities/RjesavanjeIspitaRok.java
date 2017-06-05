@@ -19,6 +19,8 @@ import com.matura.drzavna.matura.ispit_controllers.IspitActivity;
 import com.matura.drzavna.matura.models.BiologijaPitanje;
 import com.matura.drzavna.matura.models.EngleskiPitanje;
 import com.matura.drzavna.matura.models.FizikaPitanje;
+import com.matura.drzavna.matura.models.GeografijaPitanje;
+import com.matura.drzavna.matura.models.GramatikaPitanje;
 import com.matura.drzavna.matura.models.InformatikaPitanje;
 import com.matura.drzavna.matura.models.Ispit;
 import com.matura.drzavna.matura.models.KemijaPitanje;
@@ -198,6 +200,13 @@ public class RjesavanjeIspitaRok extends Activity {
         else if(name.equalsIgnoreCase("informatika_pitanja")) {
             RealmResults<InformatikaPitanje> pig = realm.where(InformatikaPitanje.class).findAll();
             for(InformatikaPitanje p : pig){
+                if(!godine.contains(DatabaseHelper.mapRokToPresentationvalue(p.getRok())) && p.getRok() != null && !p.getRok().equalsIgnoreCase(""))
+                    godine.add(DatabaseHelper.mapRokToPresentationvalue(p.getRok()));
+            }
+        }
+        else if(name.equalsIgnoreCase("geografija_pitanja")) {
+            RealmResults<GeografijaPitanje> pig = realm.where(GeografijaPitanje.class).findAll();
+            for(GeografijaPitanje p : pig){
                 if(!godine.contains(DatabaseHelper.mapRokToPresentationvalue(p.getRok())) && p.getRok() != null && !p.getRok().equalsIgnoreCase(""))
                     godine.add(DatabaseHelper.mapRokToPresentationvalue(p.getRok()));
             }

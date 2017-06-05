@@ -82,7 +82,7 @@ public class StartLoadingScreen extends Activity {
                         RealmResults<Ispit> ispiti_u_bazi = realm.where(Ispit.class).findAll();
 
 
-//                        ispiti_sa_servera.add(new Ispit(98,"geografija_pitanja", 1));
+                        ispiti_sa_servera.add(new Ispit(98,"geografija_pitanja", 1));
                         ispiti_sa_servera.add(new Ispit(96,"informatika_pitanja", 1));
                         ispiti_sa_servera.add(new Ispit(95,"njemacki_pitanja", 1));
 

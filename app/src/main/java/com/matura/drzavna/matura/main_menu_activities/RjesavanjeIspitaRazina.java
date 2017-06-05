@@ -47,7 +47,8 @@ public class RjesavanjeIspitaRazina extends Activity {
                 table_name.equalsIgnoreCase("biologija_pitanja") || table_name.equalsIgnoreCase("sociologija_pitanja")
                 || table_name.equalsIgnoreCase("fizika_pitanja")  || table_name.equalsIgnoreCase("kemija_pitanja")
                 || table_name.equalsIgnoreCase("psihologija_pitanja")  || table_name.equalsIgnoreCase("likovni_pitanja")
-                || table_name.equalsIgnoreCase("informatika_pitanja") || table_name.equalsIgnoreCase("njemacki_pitanja")){
+                || table_name.equalsIgnoreCase("informatika_pitanja") || table_name.equalsIgnoreCase("njemacki_pitanja")
+                || table_name.equalsIgnoreCase("geografija_pitanja")){
 
             Intent in = new Intent(c, RjesavanjeIspitaInfoFragments.class);
             in.putExtra("table_name", table_name);
